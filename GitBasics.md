@@ -1,0 +1,31 @@
+# Understanding git basics
+
+## What is git and why is it required?
+
+Scalable distributed version control system (VCS) that's most widely used and well supported. When you develop software, you need to able to track changes to it and be able to continue to develop it while being able to release working versions to your customers. Version control system allows you to do that. [Git](https://git-scm.com/) is also used by linux kernel. Being distributed means that you have a complete copy the *repository* on your machine thereby allowing you to look at the history, commit changes locally and synchronize with others when you are ready
+
+## How do you get started
+
+### Step 1 - Basic configuration
+
+Git is preinstalled on almost all linux systems. Git clients are also available for windows and MacOS. There are some one-line configuration steps you need to do before working with git on your system
+
+[Demo1 - Configuration](git-demos/git-config-setup.svg)
+
+### Step 2 - Setting up the repository
+
+Second step is to setup a git repository i.e. the *master copy*.
+
+[Demo2 - Setup Repository](git-demos/git-repo-setup.svg)
+
+### Step 3 - Cloning the repository and working with it
+
+Now that the repository is setup, you need to *clone* it. This is the working copy of the repository on your system where all your commit as first submitted. Periodically, you can *push* the changes to the master repository - also pulling from it to get the changes other teammates are making.
+
+[Demo3 - Cloing Repository](git-demos/git-clone-demo.svg)
+
+### Step 4 - Collaborating with others
+
+One of the main benefits of using a VCS is to be able to collaborate with others effectively and get the work done efficiently and reliably. There are several ways in which you can do that. Here is the simplest way (not recommended in prodcution):
+
+[Demo4 - Collaboration](git-demos/git-collaboration-demo.svg)
