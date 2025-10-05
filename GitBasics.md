@@ -29,3 +29,54 @@ Now that the repository is setup, you need to *clone* it. This is the working co
 One of the main benefits of using a VCS is to be able to collaborate with others effectively and get the work done efficiently and reliably. There are several ways in which you can do that. Here is the simplest way (not recommended in prodcution):
 
 [Demo4 - Collaboration](git-demos/git-collaboration-demo.svg)
+
+## Important Git Commands
+
+Show the status of current git clone
+
+```sh
+git status
+```
+
+Git history view git branches and short commit hashes
+
+```sh
+git log --graph --oneline --decorate --all
+```
+
+Pull git changes from upstream and rebase them
+
+```sh
+git pull origin main -r
+```
+
+Create a new topic branch and check it out
+
+```sh
+git checkout -b mytopic
+```
+
+Push changes upstream for a local branch while setting the upstream tracking
+
+```sh
+git push -u origin mytopic 
+```
+
+Show local branches
+
+```sh
+git branch -l
+```
+
+Merge changes from main into *mytopic* branch (when currently *mytopic* branch is checked out)
+
+```sh
+git rebase main
+git rebase main mytopic
+```
+
+Display detailed log messages for each commit in patch mode with statistics about the changes
+
+```sh
+git log -p --stat
+```
