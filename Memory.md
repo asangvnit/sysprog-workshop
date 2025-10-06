@@ -139,3 +139,7 @@ graph TB
 | Main Memory (DRAM) | 50 – 150             | GBs           | Orders of magnitude slower, physical address access    |
 | SSD/NVMe Storage   | 100K – 1M            | TBs           | Persistent storage, accessed via OS/hardware interface |
 | HDD                | 1M – 10M             | TBs           | Much slower, mechanical latency dominates              |
+
+## References
+
+- [What Every Programmer Should Know About Memory](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf)
