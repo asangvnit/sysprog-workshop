@@ -23,7 +23,8 @@ graph TB
     L3 -->|miss| MEM
 
     L1 -->|hit| CPU
-    L2 -->|hit| C
+    L2 -->|hit| CPU
+    L3 -->|hit| CPU
 ```
 ## L1 Cache
 - Separate Instruction and Data Cache
