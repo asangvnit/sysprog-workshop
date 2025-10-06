@@ -80,3 +80,7 @@ Display detailed log messages for each commit in patch mode with statistics abou
 ```sh
 git log -p --stat
 ```
+## Branching and Merging
+
+- [Basics of branching and merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#_basic_merging)
+- [Rebase workflow](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
