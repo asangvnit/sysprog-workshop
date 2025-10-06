@@ -33,3 +33,14 @@ graph TB
 - 8 way means 512 / 8 = 64 sets.
 - Lowest 8 bit of the address corerspond to offset within a cache line and next 8 bits *implicitly* correspond to the set. Upper 16 bits (in case of 32-bit addrss) correspond to Tag bits - which are stored for each cache entry.
 - Multiple addresses *alias* to the same set within cache. with 8 way-associative caches when comparing Tag bits within an address, comparison with Tags for all 8 cache lines within a set are compared parallely for efficiency.
+
+## Cost of Memory Access
+
+| Memory Level       | Access Time (cycles) | Typical Size  | Notes                                                  |
+| ------------------ | -------------------- | ------------- | ------------------------------------------------------ |
+| L1 Cache           | 3 – 5                | 32–128 KB     | Fastest, private to core, VIPT (Virtually Indexed, Physically Tagged) indexing                |
+| L2 Cache           | 10 – 20              | 256 KB – 1 MB | Private to core or cluster, slower than L1             |
+| L3 Cache           | 30 – 50              | 2–64 MB       | Shared between cores, physically indexed               |
+| Main Memory (DRAM) | 50 – 150             | GBs           | Orders of magnitude slower, physical address access    |
+| SSD/NVMe Storage   | 100K – 1M            | TBs           | Persistent storage, accessed via OS/hardware interface |
+| HDD                | 1M – 10M             | TBs           | Much slower, mechanical latency dominates              |
