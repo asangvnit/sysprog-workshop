@@ -26,6 +26,101 @@ graph TB
     L2 -->|hit| CPU
     L3 -->|hit| CPU
 ```
+## Type of Caches
+
+### Direct Mapped
+
+Any memory block can map onto one fixed cache line. These are easier to build but cache performance is not great due to high likelihood of collisons.
+
+```mermaid
+graph TB
+    subgraph MAINMEM["Main Memory"]
+        A0["Block 0"]
+        A1["Block 1"]
+        A2["Block 2"]
+        A3["Block 3"]
+        A4["Block 4"]
+        A5["Block 5"]
+    end
+
+    subgraph CACHE["Direct-Mapped Cache"]
+        C0["Line 0"]
+        C1["Line 1"]
+        C2["Line 2"]
+    end
+
+    %% Mapping of blocks to cache lines
+    A0 --> C0
+    A3 --> C0
+    A1 --> C1
+    A4 --> C1
+    A2 --> C2
+    A5 --> C2
+```
+
+### Fully Associative
+
+Any memory block can map onto any cache line. Flexible but expensive to build as we must compare the *tag* against all the entries in the cache.
+
+```mermaid
+graph TB
+    subgraph MAINMEM["Main Memory"]
+        B1["Block 0"]
+        B2["Block 1"]
+        B3["Block 2"]
+        B4["Block 3"]
+    end
+
+    subgraph CACHE["Fully Associative Cache"]
+        F1["Line 0"]
+        F2["Line 1"]
+        F3["Line 2"]
+        F4["Line 3"]
+    end
+
+    B1 --> F1
+    B1 --> F2
+    B1 --> F3
+    B1 --> F4
+
+    B2 --> F1
+    B2 --> F2
+    B2 --> F3
+    B2 --> F4
+```
+
+### Set Associative
+
+Cache is split into sets, each with multiple *ways* or lines. Balances flexibility and hardware cost. Typical in modern CPUs (8-way is common for L1).
+
+```mermaid
+graph TB
+    subgraph MAINMEM["Main Memory"]
+        C1["Block 0"]
+        C2["Block 1"]
+        C3["Block 2"]
+        C4["Block 3"]
+        C5["Block 4"]
+    end
+
+    subgraph CACHE["2-Way Set Associative Cache"]
+        subgraph Set0["Set 0"]
+            S0W0["Way 0"]
+            S0W1["Way 1"]
+        end
+        subgraph Set1["Set 1"]
+            S1W0["Way 0"]
+            S1W1["Way 1"]
+        end
+    end
+
+    C1 --> Set0
+    C2 --> Set1
+    C3 --> Set0
+    C4 --> Set1
+    C5 --> Set0
+```
+
 ## L1 Cache
 - Separate Instruction and Data Cache
 - Typical size of single line - 64 bytes
