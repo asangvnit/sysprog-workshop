@@ -15,7 +15,7 @@ docker run -d --name gerrit \
   gerritcodereview/gerrit
 ```
 
-You can connect to gerrit [here](http://server-ip:8080/login). Click on your username under "Choose:" and you will be automatically logged in. This is a dummy system with no real authentication. Now you need to add your SSH Public Key for gerrit to allow you to pull/push code changes. Here are the steps to generate and save the key. On your linux system (or container), type following commands:
+You can connect to gerrit [here](http://server-ip:8080/login). Click on your username under "Choose:" and you will be automatically logged in. This is a dummy system with no real authentication. Now you need to add your SSH Public Key for gerrit to allow you to pull/push code changes. Here are the steps to generate and save the key.
 
 ## Generate SSH key for the admin account
 
