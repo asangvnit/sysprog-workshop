@@ -5,8 +5,11 @@
 - Its a platform for developing and deploying applications in *containers*
   - Provides isolation - network, filesystem, resources
   - Sandbox environment that doesn't change
-  - Testing on different envrionments/operating system
+  - Testing on different environments
 - *Much more efficient* than full Virtualization. Uses the same kernel as host operating system (on linux)
+  - Containers are ideal for microservices, CI/CD pipelines, and fast-scaling cloud workloads
+  - Freezing the *artifacts* or runtime environment
+  - Easy to backup and reuse across different hosts
 - Easy to use - GUI as well as CLI interface
 - Allows controlling CPU/Memory usage for the containers
 
