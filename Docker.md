@@ -59,10 +59,27 @@ cbd21c8d860b2a407e0aad742faa083cded6133abbb5da56f62e2e853dc23ed1
 The hex value printed is the full container ID. To the list of currently running containers (including the dead ones)
 ```
 $ docker ps -a
-CONTAINER ID   IMAGE              COMMAND                  CREATED         STATUS                 PORTS                                        NAMES
-cbd21c8d860b   my-apache2         "httpd-foreground"       2 minutes ago   Up 2 minutes           0.0.0.0:8080->80/tcp, [::]:8080->80/tcp      my-apache-server
+CONTAINER ID   IMAGE         COMMAND               CREATED         STATUS                 PORTS                                        NAMES
+cbd21c8d860b   my-apache2    "httpd-foreground"    2 minutes ago   Up 2 minutes           0.0.0.0:8080->80/tcp, [::]:8080->80/tcp      my-apache-server
 ```
 You can refer to the container by name or ID. Notice that container ID in above command is truncated. To see the full ID, you can run `dockr ps --no-trunc`. You can stop or delete the container. A stopped container can be restarted by specifying its name or ID using `docker start` command.
+
+### Lets test if the web server is running
+```sh
+$ wget http://localhost:8080/
+--2025-10-19 15:11:11--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 0 [text/html]
+Saving to: ‘index.html’
+
+index.html                            [ <=>                                                          ]       0  --.-KB/s    in 0s
+
+2025-10-19 15:11:11 (0.00 B/s) - ‘index.html’ saved [0/0]
+```
+
+### Stopping & removing the container
 ```sh
 $ docker stop my-apache-server
 my-apache-server
