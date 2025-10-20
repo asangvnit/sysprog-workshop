@@ -108,7 +108,7 @@ perl flamegraph.pl bottlenecks.folded > bottlenecks-mt.svg
 ```
 The [result](bottlenecks-mt.svg) is interesting.
 
-## Running perf tools on Mac
+## Running perf tools on Windows/Mac
 Many of the low level performance tools don't work with *docker* unless you are running on Linux host. On MacOS, you can use [multipass](https://canonical.com/multipass).
 ```sh
 $ brew install --cask multipass
