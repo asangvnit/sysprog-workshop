@@ -165,4 +165,37 @@ Ir____________________ I1mr______________ ILmr__________ Dr__________________ D1
      17,200,344  (0.9%)               29  (0.0%)           16  (0.4%)         4,400,088  (2.3%)                 3  (0.0%)                 0                 3,600,072  (4.0%)             4  (0.0%)             0                  1,400,028  (0.7%)               14  (0.0%)          200,004   (3.5%)               3  (0.0%)           std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
 ...
 ```
-Complete output can be found in [cachegrind-output.txt](../perf-demo/cachegrind-output.txt).
+Complete output can be found in [cachegrind-output.txt](../perf-demo/cachegrind-output.txt). In order to understand symbologies here, see the table below:
+
+| Symbol | Meaning                | Type of Cache                      |
+| ------ | ---------------------- | ---------------------------------- |
+| **D**  | Data cache             | Refers to data (not instructions)  |
+| **I**  | Instruction cache      | Refers to code fetches             |
+| **1**  | Level 1 cache          | The first-level cache              |
+| **L**  | Last-level cache (LLC) | Usually L3                         |
+| **r**  | Read miss              | A read operation missed the cache  |
+| **w**  | Write miss             | A write operation missed the cache |
+| **mr** | Miss read              | (shorthand combined form)          |
+
+Some more symbols for those brave souls!
+
+| Code     | Meaning                                |
+| -------- | -------------------------------------- |
+| **D1mr** | Data L1 cache read miss                |
+| **D1mw** | Data L1 cache write miss               |
+| **DLmr** | Data last-level cache read miss        |
+| **DLmw** | Data last-level cache write miss       |
+| **I1mr** | Instruction L1 cache read miss         |
+| **ILmr** | Instruction last-level cache read miss |
+
+In order ot understand branch prediction stats, see this:
+
+| Code    | Meaning                           | Description                                                                                              |
+| ------- | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **BIm** | *Conditional branch mispredicted* | CPU guessed wrong on an `if`, `for`, or `while` branch. Pipeline flush → several lost cycles.            |
+| **BIc** | *Conditional branch executed*     | Total conditional branches actually run (not just taken). Useful as the denominator for mispredict rate. |
+| **Bcm** | *Indirect branch mispredicted*    | CPU guessed wrong on an *indirect* jump, e.g. a function pointer or virtual call. Often expensive.       |
+| **Bcc** | *Indirect branch executed*        | Total number of indirect branches executed.                                                              |
+| **BTm** | *Total branches mispredicted*     | Aggregate of conditional + indirect mispredictions.                                                      |
+| **BTc** | *Total branches executed*         | Aggregate of conditional + indirect executed branches.                                                   |
+
