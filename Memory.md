@@ -3,7 +3,7 @@ Most basic Operating System courses teach how Virtual Memory is used by modern o
 
 ## CPU and Memory
 
-Caching works on the princile of temporal and spatial locality of reference. Caches are typically organized as hierarchies. Lower levels are closer to the CPU. They are smaller - but much faster and more expensive. Typical caching model and sizes are shown below
+Caching works on the principle of temporal and spatial locality of reference. Caches are typically organized as hierarchies. Lower levels are closer to the CPU. They are smaller - but much faster and more expensive. Typical caching model and sizes are shown below
 
 ```mermaid
 graph TB
