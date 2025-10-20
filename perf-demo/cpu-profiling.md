@@ -9,7 +9,7 @@ g++ -O2 -g -ggdb -fno-inline -std=c++17 bottlenecks.cpp -o bottlenecks
 Now you can run it under `perf`
 
 ```sh
-$ /usr/lib/linux-tools-6.8.0-85/perf record -g -F 99 -- ./bottlenecks
+$ sudo perf record -g -F 99 -- ./bottlenecks
 
 Starting CPU-bound section...
 Primes computed: 2262
@@ -25,7 +25,7 @@ Total time: 0.170326 s
 This produces a file `perf.data` in the current directory as shown above. There are multiple ways to analyze the output. Simples is
 
 ```sh
-$ /usr/lib/linux-tools-6.8.0-85/perf report -g --stdio
+$ sudo perf report -g --stdio
 
 # To display the perf.data header info, please use --header/--header-only options.
 #
@@ -73,7 +73,7 @@ wget https://raw.githubusercontent.com/brendangregg/FlameGraph/refs/heads/master
 Once you have these two scripts, we can run in on our `perf.data` file.
 
 ```sh
-/usr/lib/linux-tools-6.8.0-85/perf script > bottlenecks.perf
+sudo perf script > bottlenecks.perf
 perl stackcollapse-perf.pl bottlenecks.perf > bottlenecks.folded
 perl flamegraph.pl bottlenecks.folded > bottlenecks.svg
 ```
@@ -84,6 +84,8 @@ All this we need to do is point the browser at [bottlenecks.svg](bottlenecks.svg
 Flamegraph is equally useful for looking at the performance of multi-threaded programs. MT version of our demo [bottlenecks-mt.cpp](bottlenecks-mt.cpp) can be analyzed as follows:
 ```sh
 $ g++ -O2 -g -ggdb -fno-inline -std=c++17 bottlenecks-mt.cpp -o bottlenecks-mt
+
+$ sudo perf record -g -F 99 -- ./bottlenecks-mt
 Using 16 threads.
 
 [CPU-bound]
@@ -98,43 +100,18 @@ File written with 200000 lines.
 Total time: 0.0847577 s
 [ perf record: Woken up 1 times to write data ]
 [ perf record: Captured and wrote 2.294 MB perf.data (3998 samples) ]
-
 ```
+
 Notice that the samples are significantly higher - given that they need to be collected for each execution unit. Post processing steps are identical.
 ```sh
-/usr/lib/linux-tools-6.8.0-85/perf script > bottlenecks-mt.perf
+perf script > bottlenecks-mt.perf
 perl stackcollapse-perf.pl bottlenecks.perf > bottlenecks-mt.folded
 perl flamegraph.pl bottlenecks.folded > bottlenecks-mt.svg
 ```
 The [result](bottlenecks-mt.svg) is interesting.
 
 ## Running perf tools on Windows/Mac
-Many of the low level performance tools don't work with *docker* unless you are running on Linux host. On MacOS, you can use [multipass](https://canonical.com/multipass).
-```sh
-$ brew install --cask multipass
-==> Downloading https://raw.githubusercontent.com/Homebrew/homebrew-cask/aa0c7e1341889c0992cda0693a043b898fe6b34c/Casks/m/multipass.rb
-########################################################################################################################################################################################## 100.0%
-==> Downloading https://github.com/canonical/multipass/releases/download/v1.16.1/multipass-1.16.1+mac-Darwin.pkg
-==> Downloading from https://release-assets.githubusercontent.com/github-production-release-asset/114128199/0c7f4e9f-b767-409d-805e-37837458bbbc?sp=r&sv=2018-11-09&sr=b&spr=https&se=2025-10-20T
-########################################################################################################################################################################################## 100.0%
-==> Installing Cask multipass
-==> Running installer for multipass with `sudo` (which may request your password)...
-Password:
-installer: Package name is multipass
-installer: Installing at base path /
-installer: The install was successful.
-🍺  multipass was successfully installed!
-```
-Now you need to create Ubuntu instance (4GB RAM, 10GB diskspace and 4 CPUs).
-```sh
-$ sudo multipass launch --name sysprog --cpus 4 --memory 4G --disk 10G 24.04
-Launched: sysprog
-$ sudo multipass list
-Name                    State             IPv4             Image
-sysprog                 Running           192.168.2.2      Ubuntu 24.04 LTS
-```
-
-Now connect to it 
+Just connect to your `sysprog` instance.
 ```sh
 $ sudo multipass shell sysprog
 Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
@@ -168,11 +145,6 @@ To run a command as administrator (user "root"), use "sudo <command>".
 See "man sudo_root" for details.
 
 ubuntu@sysprog:~$
-```
-Install the necessary tools and make sure they work
-```sh
-$ sudo apt update
-$ sudo apt install linux-tools-common linux-tools-generic -y
 ```
 Test that perf works
 ```sh
