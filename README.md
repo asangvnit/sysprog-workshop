@@ -12,5 +12,5 @@ System Programming Workshop @Palloti College on 1st Nov 2025
 2. [Memory Management](Memory.md)
 3. [Git Basics](GitBasics.md)
 4. [Docker Fundamentals](Docker.md)
-5. [Analyzing Performance](perf-demo/CpuProfiling.md)
-6. [Valgrind and Other tools](valgrind-demo/Valgrind.md)
+5. [Analyzing Performance](perf-demo/README.md)
+6. [Valgrind and Other tools](valgrind-demo/README.md)
