@@ -108,6 +108,101 @@ perl flamegraph.pl bottlenecks.folded > bottlenecks-mt.svg
 ```
 The [result](bottlenecks-mt.svg) is interesting.
 
+## Running perf tools on Mac
+Many of the low level performance tools don't work with *docker* unless you are running on Linux host. On MacOS, you can use [multipass](https://canonical.com/multipass).
+```sh
+$ brew install --cask multipass
+==> Downloading https://raw.githubusercontent.com/Homebrew/homebrew-cask/aa0c7e1341889c0992cda0693a043b898fe6b34c/Casks/m/multipass.rb
+########################################################################################################################################################################################## 100.0%
+==> Downloading https://github.com/canonical/multipass/releases/download/v1.16.1/multipass-1.16.1+mac-Darwin.pkg
+==> Downloading from https://release-assets.githubusercontent.com/github-production-release-asset/114128199/0c7f4e9f-b767-409d-805e-37837458bbbc?sp=r&sv=2018-11-09&sr=b&spr=https&se=2025-10-20T
+########################################################################################################################################################################################## 100.0%
+==> Installing Cask multipass
+==> Running installer for multipass with `sudo` (which may request your password)...
+Password:
+installer: Package name is multipass
+installer: Installing at base path /
+installer: The install was successful.
+🍺  multipass was successfully installed!
+```
+Now you need to create Ubuntu instance (4GB RAM, 10GB diskspace and 4 CPUs).
+```sh
+$ sudo multipass launch --name sysprog --cpus 4 --memory 4G --disk 10G 24.04
+Launched: sysprog
+$ sudo multipass list
+Name                    State             IPv4             Image
+sysprog                 Running           192.168.2.2      Ubuntu 24.04 LTS
+```
+
+Now connect to it 
+```sh
+$ sudo multipass shell sysprog
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Oct 20 10:18:25 IST 2025
+
+  System load:             0.0
+  Usage of /:              22.6% of 8.65GB
+  Memory usage:            5%
+  Swap usage:              0%
+  Processes:               129
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.2.2
+  IPv6 address for enp0s1: fdb0:2327:1cc6:cbf2:5054:ff:feaf:db7
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+14 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@sysprog:~$
+```
+Install the necessary tools and make sure they work
+```sh
+$ sudo apt update
+$ sudo apt install linux-tools-common linux-tools-generic -y
+```
+Test that perf works
+```sh
+ubuntu@sysprog:~$ sudo perf record -a -g sleep 10
+
+[ perf record: Woken up 4 times to write data ]
+[ perf record: Captured and wrote 1.196 MB perf.data (8611 samples) ]
+ubuntu@sysprog:~$ sudo perf report -g --stdio
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 8K of event 'cpu-clock:ppp'
+# Event count (approx.): 2152750000
+#
+# Children      Self  Command          Shared Object          Symbol
+# ........  ........  ...............  .....................  ....................................
+#
+    99.63%     0.00%  swapper          [kernel.kallsyms]      [k] cpu_startup_entry
+            |
+            ---cpu_startup_entry
+               |
+                --99.56%--do_idle
+                          |
+                           --98.37%--cpuidle_idle_call
+                                     |
+                                      --11.68%--default_idle_call
+...
+```
 ## References
 
 1. [Linux Observability tools](https://www.brendangregg.com/linuxperf.html)
