@@ -310,3 +310,16 @@ ubuntu@sysprog:~$ ps -T 752
     752     784 ?        Ssl    0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
 ```
 The process has two threads. In order to understand columns like `STAT`, see `man ps`. *man* is short for manual page.
+### Resource information with top
+``sh
+ubuntu@sysprog:~$ top -H -c -n 1| head
+
+top - 12:30:30 up  1:11,  2 users,  load average: 0.00, 0.00, 0.00
+Threads: 146 total,   1 running, 145 sleeping,   0 stopped,   0 zombie
+%Cpu0  :  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+%Cpu1  :  6.2 us,  0.0 sy,  0.0 ni, 93.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+%Cpu2  :  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+%Cpu3  :  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3901.8 total,   3364.7 free,    288.6 used,    392.1 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   3613.2 avail Mem
+```
