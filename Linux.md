@@ -46,18 +46,7 @@ ubuntu@sysprog:~$ uname -a
 Linux sysprog 6.8.0-85-generic #85-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 18 15:21:04 UTC 2025 aarch64 aarch64 aarch64 GNU/Linux
 ubuntu@sysprog:~$ uname -r
 ```
-Here `aarch64` indicates that we are running on 64-bit ARM processor. Linux kernel version is `6.8.0-85-generic`.
-
-## Installing prerequisites inside Unbutu instance
-
-Install the necessary tools and make sure they work
-```sh
-$ sudo apt update
-$ sudo apt install -y linux-tools-common linux-tools-generic
-$ sudo apt install -y apt-file bind9-dnsutils build-essential gdb git cmake iputils-ping valgrind iproute2
-```
-
-Now we are ready to get going
+Here `aarch64` indicates that we are running on 64-bit ARM processor. Linux kernel version is `6.8.0-85-generic`. Now we are ready to get going
 
 ## List of processes
 ```sh
