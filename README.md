@@ -8,9 +8,10 @@ System Programming Workshop @Palloti College on 1st Nov 2025
 
 ## Order of Presentations
 
-1. [Linux Fundamentals](Linux.md)
-2. [Memory Management](Memory.md)
-3. [Git Basics](GitBasics.md)
-4. [Docker Fundamentals](Docker.md)
-5. [Analyzing Performance](perf-demo/README.md)
-6. [Valgrind and Other tools](valgrind-demo/README.md)
+1. [Installing Prerequisites](Setup.md)
+2. [Linux Fundamentals](Linux.md)
+3. [Docker Fundamentals](Docker.md)
+4. [Memory Management](Memory.md)
+5. [Git Basics](GitBasics.md)
+6. [Analyzing Performance](perf-demo/README.md)
+7. [Valgrind and Other tools](valgrind-demo/README.md)

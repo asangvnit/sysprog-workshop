@@ -1,50 +1,9 @@
 # Introduction to linux
 
-Most widely used **NIX based operating system in the world today. Has many variants and forks - but `debian`, `ubuntu` and `fedora` are some of the most widely used ones. You can install it on your laptop directly. Of course if you love your Windows/MacOS too much there are other options:
+Most widely used **NIX based operating system in the world today. Has many variants and forks - but `debian`, `ubuntu` and `fedora` are some of the most widely used ones. You can install it on your laptop directly. Details instructions can be found in [Setup](Setup.md). Please follow those instructions (if you haven't done so already and then come back here).
 
-- [VirtualBox](https://virtualbox.org/) - works on Windows & Mac
-- [Multipass](https://canonical.com/multipass) - works on Windows & Mac
-- WSL (Windows Services for Linux) - works on Windows
-- Paralles - works on Mac and is usually an overkill
+First, you connect to the multipass ubuntu install you had created earlier.
 
-VirtualBox is more GUI driven and simple to use. Multipass is easier to use and customize
-
-## Installing multipass on MacOS
-
-First, you need to install [HomeBrew](https://brew.sh/)
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-Now we are ready to install multipass.
-```sh
-$ brew install --cask multipass
-==> Downloading https://raw.githubusercontent.com/Homebrew/homebrew-cask/aa0c7e1341889c0992cda0693a043b898fe6b34c/Casks/m/multipass.rb
-########################################################################################################################################################################################## 100.0%
-==> Downloading https://github.com/canonical/multipass/releases/download/v1.16.1/multipass-1.16.1+mac-Darwin.pkg
-==> Downloading from https://release-assets.githubusercontent.com/github-production-release-asset/114128199/0c7f4e9f-b767-409d-805e-37837458bbbc?sp=r&sv=2018-11-09&sr=b&spr=https&se=2025-10-20T
-########################################################################################################################################################################################## 100.0%
-==> Installing Cask multipass
-==> Running installer for multipass with `sudo` (which may request your password)...
-Password:
-installer: Package name is multipass
-installer: Installing at base path /
-installer: The install was successful.
-🍺  multipass was successfully installed!
-```
-Now you can go to the command prompt and create ubuntu instance.
-
-### Creating ubuntu instance on MacOS
-Here we are creating an Ubuntu instance with 4GB RAM, 10GB diskspace and 4 CPUs. You can choose different parameters based on your host's capabilities.
-
-```sh
-$ sudo multipass launch --name sysprog --cpus 4 --memory 4G --disk 10G 24.04
-Launched: sysprog
-$ sudo multipass list
-Name                    State             IPv4             Image
-sysprog                 Running           192.168.2.2      Ubuntu 24.04 LTS
-```
-Now connect to it:
 ```sh
 $ sudo multipass shell sysprog
 Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
@@ -80,57 +39,8 @@ See "man sudo_root" for details.
 ubuntu@sysprog:~$
 ```
 
-## Installing multipass on Windows
-
-[Download](https://canonical.com/multipass/download/windows) multipass for windows and run the installer. During installation, when prompted use Microsoft's [Hyper-V](https://en.wikipedia.org/wiki/Hyper-V) as the [Hypervisor](https://en.wikipedia.org/wiki/Hypervisor). Once installed, you can go to the command prompt and create an ubuntu instance. Open `cmd` window and execute following commands:
-```sh
-C:\>cd C:\Program Files\Multipass\bin
-C:\Program Files\Multipass\bin>multipass version
-multipass   1.16.1+win
-multipassd  1.16.1+win
-C:\Program Files\Multipass\bin>multipass launch --name sysprog --cpus 4 --memory 4G --disk 10G 24.04
-Launched: sysprog
-
-C:\Program Files\Multipass\bin>multipass list
-Name                    State             IPv4             Image
-sysprog                 Running           192.168.115.22   Ubuntu 24.04 LTS
-```
-Now connect to it:
-```sh
-C:\Program Files\Multipass\bin>multipass shell sysprog
-Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
-
- * Documentation:  https://help.ubuntu.com
- * Management:     https://landscape.canonical.com
- * Support:        https://ubuntu.com/pro
-
- System information as of Mon Oct 20 10:18:25 IST 2025
-
-  System load:             0.0
-  Usage of /:              22.6% of 8.65GB
-  Memory usage:            5%
-  Swap usage:              0%
-  Processes:               129
-  Users logged in:         0
-  IPv4 address for enp0s1: 192.168.2.2
-  IPv6 address for enp0s1: fdb0:2327:1cc6:cbf2:5054:ff:feaf:db7
-
-
-Expanded Security Maintenance for Applications is not enabled.
-
-14 updates can be applied immediately.
-To see these additional updates run: apt list --upgradable
-
-Enable ESM Apps to receive additional future security updates.
-See https://ubuntu.com/esm or run: sudo pro status
-
-
-To run a command as administrator (user "root"), use "sudo <command>".
-See "man sudo_root" for details.
-
-ubuntu@sysprog:~$
-```
 For system version details, run
+
 ```sh
 ubuntu@sysprog:~$ uname -a
 Linux sysprog 6.8.0-85-generic #85-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 18 15:21:04 UTC 2025 aarch64 aarch64 aarch64 GNU/Linux
