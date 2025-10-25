@@ -24,11 +24,11 @@ Now that the repository is setup, you need to *clone* it. This is the working co
 
 [![asciicast](https://asciinema.org/a/KK9P6tChHWpd2Y1wbowlojCRe.svg)](https://asciinema.org/a/KK9P6tChHWpd2Y1wbowlojCRe)
 
-### Step 4 - Collaborating with others
+### Step 4 - Collaborating with others - conflicts and rebasing
 
 One of the main benefits of using a VCS is to be able to collaborate with others effectively and get the work done efficiently and reliably. There are several ways in which you can do that. Here is the simplest way (not recommended in prodcution):
 
-[Demo4 - Collaboration](git-demos/git-collaboration-demo.svg)
+[![asciicast](https://asciinema.org/a/SIIKkqfOtpyBslMHyyz4XWmx3.svg)](https://asciinema.org/a/SIIKkqfOtpyBslMHyyz4XWmx3)
 
 ## Important Git Commands
 
