@@ -188,11 +188,9 @@ The review page appears as follows:
 
 <img src="images/gerrit-review-page.png" alt="gerrit review page" />
 
-Then reviewer adds comments
+Then reviewer [adds comments](videos/
 
 <img src="images/gerrit-review-page-with-comments.png" alt="gerrit review comments" />
-
-Then reviewer [posts comments](videos/code-review.webm) and replies.
 
 ## References
 
