@@ -16,7 +16,7 @@
 ## Docker Architecture
 
 <div align="center">
-  <img src="docker-architecture.png" alt="architecture" width="400">
+  <img src="images/docker-architecture.png" alt="architecture" width="400">
 </div>
 
 ## Getting Started
