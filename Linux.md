@@ -323,3 +323,16 @@ Threads: 146 total,   1 running, 145 sleeping,   0 stopped,   0 zombie
 MiB Mem :   3901.8 total,   3364.7 free,    288.6 used,    392.1 buff/cache
 MiB Swap:      0.0 total,      0.0 free,      0.0 used.   3613.2 avail Mem
 ```
+
+Legend:
+
+```
+us : time running un-niced user processes
+sy : time running kernel processes
+ni : time running niced user processes
+id : time spent in the kernel idle handler
+wa : time waiting for I/O completion
+hi : time spent servicing hardware interrupts
+si : time spent servicing software interrupts
+st : time stolen from this vm by the hypervisor
+```
