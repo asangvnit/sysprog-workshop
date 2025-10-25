@@ -1,21 +1,24 @@
 # Getting ready to use the git & gerrit workflow
 
+You should connect to Gerrit from your `code-server` [container](Setup.md#installing-code-server-docker-container). In order to generate a SSH keypair, run the following command:
+ 
+```sh
+$ docker exec -it code-server /bin/bash
+```
+
 ## Git Configuration
 Make sire you have done this (replace My Name with your name and email address with the one you used to register with the gerrit server):
 ```sh
-$ docker exec -it code-server /bin/bash
 coder@3929e2690e0e:~ git config --global user.name "My name"
 coder@3929e2690e0e:~ git config --global user.email myname@example.com
 ```
 
 ## Generate SSH key for yourself
 
-You should connect to Gerrit from your `code-server` [container](Setup.md#installing-code-server-docker-container). In order to generate a SSH keypair, run the following command:
+In order to generate a SSH keypair, run the following command:
  
 ```sh
-$ docker exec -it code-server /bin/bash
 coder@3929e2690e0e:~$ ssh-keygen -t ed25519
-
 Generating public/private ed25519 key pair.
 Enter file in which to save the key (/home/coder/.ssh/id_ed25519):
 Created directory '/home/coder/.ssh'.
