@@ -18,4 +18,4 @@ System Programming Workshop @Palloti College on 1st Nov 2025
 
 ## Before you start the lab.. 
 
-5. [Check your local configuration](GitAndGerritUsers.md)
+[Check your local setup](GitAndGerritUsers.md)
