@@ -9,10 +9,7 @@ Install docker on the server where you are planning to use gerrit
 Create Gerrit containers as follows (server-ip is the IP address of the linux server on which gerrit container is being installed.
 
 ```sh
-docker run -d --name gerrit \
-  -e CANONICAL_WEB_URL=http://<server-ip>:8080 \
-  -p 8080:8080 -p 29418:29418 \
-  gerritcodereview/gerrit
+docker run -d --name gerrit -e CANONICAL_WEB_URL=http://<server-ip>:8080 -p 8080:8080 -p 29418:29418 gerritcodereview/gerrit
 ```
 
 You can connect to gerrit [here](http://server-ip:8080/login). Click on your username under "Choose:" and you will be automatically logged in. This is a dummy system with no real authentication. Now you need to add your SSH Public Key for gerrit to allow you to pull/push code changes. Here are the steps to generate and save the key.
