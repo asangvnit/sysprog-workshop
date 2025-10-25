@@ -192,10 +192,11 @@ Then reviewer adds comments and replies:
 
 <img src="images/gerrit-review-page-with-comments.png" alt="gerrit review comments" />
 
-<video width="640" height="240" controls>
-  <source src="https://github.com/asangvnit/sysprog-workshop/raw/refs/heads/main/videos/reviewer-comments-and-history.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+### Responding to comments
+
+[![asciicast](https://asciinema.org/a/kQhEnunkZpaetPg3RrLnBVoGy.svg)](https://asciinema.org/a/kQhEnunkZpaetPg3RrLnBVoGy)
+
+Remaining steps must be done in the browser by [marking the comments as Done](images/gerrit-review-reply.png) and hitting [Reply](images/gerrit-review-reply-2.png), 
 
 ## References
 
