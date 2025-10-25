@@ -309,8 +309,11 @@ ubuntu@sysprog:~$ ps -T 752
     752     752 ?        Ssl    0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
     752     784 ?        Ssl    0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
 ```
+
 The process has two threads. In order to understand columns like `STAT`, see `man ps`. *man* is short for manual page.
+
 ### Resource information with top
+
 ```sh
 ubuntu@sysprog:~$ top -H -c -n 1| head
 
@@ -336,3 +339,68 @@ hi : time spent servicing hardware interrupts
 si : time spent servicing software interrupts
 st : time stolen from this vm by the hypervisor
 ```
+
+## Process Memory Map
+
+`proc` filesystem allows you to look deeper into process memory layout
+
+```
+ubuntu@sysprog:~$ sudo cat /proc/$$/maps
+c94a93f30000-c94a94094000 r-xp 00000000 08:01 1802                       /usr/bin/bash
+c94a940ab000-c94a940b0000 r--p 0016b000 08:01 1802                       /usr/bin/bash
+c94a940b0000-c94a940b9000 rw-p 00170000 08:01 1802                       /usr/bin/bash
+c94a940b9000-c94a940c4000 rw-p 00000000 00:00 0
+c94ac05fc000-c94ac07a9000 rw-p 00000000 00:00 0                          [heap]
+c94a93f30000-c94a94094000 r-xp 00000000 08:01 1802                       /usr/bin/bash
+c94a940ab000-c94a940b0000 r--p 0016b000 08:01 1802                       /usr/bin/bash
+c94a940b0000-c94a940b9000 rw-p 00170000 08:01 1802                       /usr/bin/bash
+c94a940b9000-c94a940c4000 rw-p 00000000 00:00 0
+fbcb913a7000-fbcb91400000 r--p 00000000 08:01 7674                       /usr/lib/locale/C.utf8/LC_CTYPE
+fbcb91400000-fbcb916eb000 r--p 00000000 08:01 7668                       /usr/lib/locale/locale-archive
+fbcb91700000-fbcb91899000 r-xp 00000000 08:01 6282                       /usr/lib/aarch64-linux-gnu/libc.so.6
+fbcb91899000-fbcb918ad000 ---p 00199000 08:01 6282                       /usr/lib/aarch64-linux-gnu/libc.so.6
+fbcb918ad000-fbcb918b0000 r--p 0019d000 08:01 6282                       /usr/lib/aarch64-linux-gnu/libc.so.6
+fbcb918b0000-fbcb918b2000 rw-p 001a0000 08:01 6282                       /usr/lib/aarch64-linux-gnu/libc.so.6
+fbcb918b2000-fbcb918be000 rw-p 00000000 00:00 0
+fbcb918c0000-fbcb918ef000 r-xp 00000000 08:01 6057                       /usr/lib/aarch64-linux-gnu/libtinfo.so.6.4
+fbcb918ef000-fbcb918fc000 ---p 0002f000 08:01 6057                       /usr/lib/aarch64-linux-gnu/libtinfo.so.6.4
+fbcb918fc000-fbcb91900000 r--p 0003c000 08:01 6057                       /usr/lib/aarch64-linux-gnu/libtinfo.so.6.4
+fbcb91900000-fbcb91901000 rw-p 00040000 08:01 6057                       /usr/lib/aarch64-linux-gnu/libtinfo.so.6.4
+fbcb9190e000-fbcb9190f000 r--p 00000000 08:01 7679                       /usr/lib/locale/C.utf8/LC_NUMERIC
+fbcb9190f000-fbcb91910000 r--p 00000000 08:01 7682                       /usr/lib/locale/C.utf8/LC_TIME
+fbcb91910000-fbcb91937000 r-xp 00000000 08:01 6279                       /usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1
+fbcb91937000-fbcb91938000 r--p 00000000 08:01 7673                       /usr/lib/locale/C.utf8/LC_COLLATE
+fbcb91938000-fbcb91939000 r--p 00000000 08:01 7677                       /usr/lib/locale/C.utf8/LC_MONETARY
+fbcb91939000-fbcb9193a000 r--p 00000000 08:01 7671                       /usr/lib/locale/C.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+fbcb9193a000-fbcb91941000 r--s 00000000 08:01 5190                       /usr/lib/aarch64-linux-gnu/gconv/gconv-modules.cache
+fbcb91941000-fbcb91943000 rw-p 00000000 00:00 0
+fbcb91943000-fbcb91944000 r--p 00000000 08:01 7680                       /usr/lib/locale/C.utf8/LC_PAPER
+fbcb91944000-fbcb91945000 r--p 00000000 08:01 7678                       /usr/lib/locale/C.utf8/LC_NAME
+fbcb91945000-fbcb91946000 r--p 00000000 08:01 7672                       /usr/lib/locale/C.utf8/LC_ADDRESS
+fbcb91946000-fbcb91947000 r--p 00000000 08:01 7681                       /usr/lib/locale/C.utf8/LC_TELEPHONE
+fbcb91947000-fbcb91948000 r--p 00000000 08:01 7676                       /usr/lib/locale/C.utf8/LC_MEASUREMENT
+fbcb91948000-fbcb91949000 r--p 00000000 08:01 7675                       /usr/lib/locale/C.utf8/LC_IDENTIFICATION
+fbcb91949000-fbcb9194b000 rw-p 00000000 00:00 0
+fbcb9194b000-fbcb9194d000 r--p 00000000 00:00 0                          [vvar]
+fbcb9194d000-fbcb9194e000 r-xp 00000000 00:00 0                          [vdso]
+fbcb9194e000-fbcb91950000 r--p 0002e000 08:01 6279                       /usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1
+fbcb91950000-fbcb91952000 rw-p 00030000 08:01 6279                       /usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1
+fffff1931000-fffff1952000 rw-p 00000000 00:00 0                          [stack]
+```
+
+### First three lines
+
+```
+address range             perms offset    dev  inode                      pathname
+----------------------------------------------------------------------------------
+c94a93f30000-c94a94094000 r-xp  00000000 08:01 1802                       /usr/bin/bash
+c94a940ab000-c94a940b0000 r--p  0016b000 08:01 1802                       /usr/bin/bash
+c94a940b0000-c94a940b9000 rw-p  00170000 08:01 1802                       /usr/bin/bash
+```
+
+- address - range of addresses mapped
+- perms - permission bits - r(read), w(write), x(execute), p(private), s(shared)
+
+First line has `x` bit set. So it maps to the `text` (or code) segment of `bash`. Second has `r` and `p` bits set. So its readonly process private data - `.rodata` segment. and the last line has `rw` and `p` set. So it represents `.bss` (global uninitialized variables) and `.data` (global initialized variables) sections of the executable.
+
+You can find more information at [proc filesystem](https://www.kernel.org/doc/html/latest/filesystems/proc.html). Few interesting things to explore on your own are `[heap]`, `[stack`], `[vdso]`, `[vvar]`. You can explore these on your own!
