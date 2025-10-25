@@ -150,7 +150,7 @@ $ sudo apt install -y apt-file bind9-dnsutils build-essential gdb git cmake iput
 Now we are ready to get going
 
 ## List of processes
-``sh
+```sh
 ubuntu@sysprog:~$ ps
     PID TTY          TIME CMD
    1810 pts/0    00:00:00 bash
