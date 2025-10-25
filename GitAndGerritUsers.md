@@ -135,8 +135,16 @@ Your branch is based on 'origin/master', but the upstream is gone.
   (use "git branch --unset-upstream" to fixup)
 
 nothing to commit, working tree clean
-coder@3929e2690e0e:~/myproject$ git log --oneline
-e890de6 (HEAD -> master) This is a hello world program
+coder@3929e2690e0e:~/myproject$ git log
+commit e890de613f651bbffd0d0e6cc3dfcdfa2ff7d8c1 (HEAD -> master)
+Author: Asang Dani <asang.dani@gmail.com>
+Date:   Sat Oct 25 11:13:57 2025 +0000
+
+    This is a hello world program
+
+    This is a very simple program that illustrates how gerrit code review works
+
+    Change-Id: I3d01324f283b38ba28bf4076c28a858b2df5e528
 ```
 
 ## Push the changes
