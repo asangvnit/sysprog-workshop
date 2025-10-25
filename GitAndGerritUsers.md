@@ -181,6 +181,9 @@ remote:
 To ssh://192.168.88.5:29418/myproject
  * [new reference]   HEAD -> refs/for/master
 ```
+
+## Code Review
+
 The review page appears as follows:
 
 <img src="images/gerrit-review-page.png" alt="gerrit review page" />
