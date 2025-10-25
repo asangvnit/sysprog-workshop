@@ -311,7 +311,7 @@ ubuntu@sysprog:~$ ps -T 752
 ```
 The process has two threads. In order to understand columns like `STAT`, see `man ps`. *man* is short for manual page.
 ### Resource information with top
-``sh
+```sh
 ubuntu@sysprog:~$ top -H -c -n 1| head
 
 top - 12:30:30 up  1:11,  2 users,  load average: 0.00, 0.00, 0.00
