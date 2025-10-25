@@ -13,7 +13,7 @@ You need to install Linux on your system if you are not running it already. Of c
 - WSL (Windows Services for Linux) - works on Windows
 - Parallels - works on Mac and is usually an overkill
 
-VirtualBox is more GUI driven and simple to use. Multipass is easier to use and customize. You also need *Docker* for running VS Code [code-server](https://github.com/coder/code-server) inside a browser.  We also need tools like `cmake`, GNU/Clang C++ compiler, GDB etc.
+VirtualBox is more GUI driven and simple to use. Multipass is easier to use and customize. So we will use `multipass` for this workshop. You also need *Docker* for running VS Code [code-server](https://github.com/coder/code-server) inside a browser.  We also need tools like `cmake`, GNU/Clang C++ compiler, GDB etc.
 
 ### Install docker
 
