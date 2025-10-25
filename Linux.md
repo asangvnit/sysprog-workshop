@@ -303,3 +303,7 @@ c94a940b0000-c94a940b9000 rw-p  00170000 08:01 1802                       /usr/b
 First line has `x` bit set. So it maps to the `text` (or code) segment of `bash`. Second has `r` and `p` bits set. So its readonly process private data - `.rodata` segment. and the last line has `rw` and `p` set. So it represents `.bss` (global uninitialized variables) and `.data` (global initialized variables) sections of the executable.
 
 You can find more information at [proc filesystem](https://www.kernel.org/doc/html/latest/filesystems/proc.html). Few interesting things to explore on your own are `[heap]`, `[stack`], `[vdso]`, `[vvar]`. You can explore these on your own!
+
+## References
+1. [Executable and Linkable Format (ELF)](https://refspecs.linuxbase.org/elf/elfspec.pdf)
+2. [System V Application Binary Interface (ABI)](https://refspecs.linuxbase.org/elf/x86_64-SysV-psABI.pdf)
