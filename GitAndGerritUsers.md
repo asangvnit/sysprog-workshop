@@ -196,7 +196,9 @@ Then reviewer adds comments and replies:
 
 [![asciicast](https://asciinema.org/a/kQhEnunkZpaetPg3RrLnBVoGy.svg)](https://asciinema.org/a/kQhEnunkZpaetPg3RrLnBVoGy)
 
-Remaining steps must be done in the browser by [marking the comments as Done](images/gerrit-review-reply.png) and hitting [Reply](images/gerrit-review-reply-2.png), 
+Remaining steps must be done in the browser by [marking the comments as Done](images/gerrit-review-reply.png) and hitting [Reply](images/gerrit-review-reply-2.png).
+
+Reviewer sees that all comments are resolved and [replies with +2](images/gerrit-reviewer-ok-to-submit.png).
 
 ## References
 
