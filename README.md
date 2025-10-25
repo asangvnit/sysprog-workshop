@@ -15,3 +15,7 @@ System Programming Workshop @Palloti College on 1st Nov 2025
 5. [Git Basics](GitBasics.md)
 6. [Analyzing Performance](perf-demo/README.md)
 7. [Valgrind and Other tools](valgrind-demo/README.md)
+
+## Before you start the lab.. 
+
+5. [Check your local configuration](GitAndGerritUsers.md)
