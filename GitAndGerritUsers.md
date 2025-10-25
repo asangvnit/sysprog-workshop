@@ -148,7 +148,7 @@ Your branch is based on 'origin/master', but the upstream is gone.
 
 nothing to commit, working tree clean
 coder@3929e2690e0e:~/myproject$ git log
-commit e890de613f651bbffd0d0e6cc3dfcdfa2ff7d8c1 (HEAD -> master)
+commit a7ac13f45e68fbfb484b01da4b95f1972ca0660e (HEAD -> master)
 Author: Asang Dani <asang.dani@gmail.com>
 Date:   Sat Oct 25 11:13:57 2025 +0000
 
@@ -156,7 +156,7 @@ Date:   Sat Oct 25 11:13:57 2025 +0000
 
     This is a very simple program that illustrates how gerrit code review works
 
-    Change-Id: I3d01324f283b38ba28bf4076c28a858b2df5e528
+    Change-Id:     Change-Id: I44d10ca6941813426c9f5000c08f08359af178bd
 ```
 
 ## Push the changes
@@ -169,10 +169,10 @@ Enumerating objects: 3, done.
 Counting objects: 100% (3/3), done.
 Delta compression using up to 8 threads
 Compressing objects: 100% (2/2), done.
-Writing objects: 100% (3/3), 377 bytes | 377.00 KiB/s, done.
+Writing objects: 100% (3/3), 376 bytes | 376.00 KiB/s, done.
 Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 remote: Processing changes: refs: 1, new: 1, done
-remote: commit e890de6: warning: too many message lines longer than 72 characters; manually wrap lines
+remote: commit a7ac13f: warning: too many message lines longer than 72 characters; manually wrap lines
 remote:
 remote: SUCCESS
 remote:
