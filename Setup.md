@@ -1,3 +1,5 @@
+# Prerequisites for Systems Programming Workshop
+
 ## What you should know?
 - Basic Computer Architecture
 - Basic Operating System Concepts
@@ -77,7 +79,7 @@ Password:
 installer: Package name is multipass
 installer: Installing at base path /
 installer: The install was successful.
-🍺  multipass was successfully installed!
+ multipass was successfully installed!
 ```
 Now you can go to the command prompt and create ubuntu instance.
 
