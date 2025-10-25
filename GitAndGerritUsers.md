@@ -181,6 +181,15 @@ remote:
 To ssh://192.168.88.5:29418/myproject
  * [new reference]   HEAD -> refs/for/master
 ```
+The review page appears as follows:
+
+<img src="images/gerrit-review-page.png" alt="gerrit review page" />
+
+Then reviewer adds comments
+
+<img src="images/gerrit-review-page-with-comments.png" alt="gerrit review comments" />
+
+Then reviewer [posts comments](videos/code-review.webm) and replies.
 
 ## References
 
