@@ -188,7 +188,12 @@ The review page appears as follows:
 
 <img src="images/gerrit-review-page.png" alt="gerrit review page" />
 
-Then reviewer [adds comments](videos/
+Then reviewer [adds comments](videos/reviewer-comments-and-history.mp4)
+
+<video width="320" height="240" controls>
+  <source src="videos/reviewer-comments-and-history.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 <img src="images/gerrit-review-page-with-comments.png" alt="gerrit review comments" />
 
