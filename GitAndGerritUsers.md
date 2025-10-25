@@ -84,8 +84,83 @@ nothing to commit (create/copy files and use "git add" to track)
 
 ## Making the changes and commiting the code
 
+Now is the time to add your first code review using gerrit. For that we must add some files to the repository. Create a hello.cpp as follows:
 
-5. Push the changes - git push origin HEAD:refs/for/master
+```cpp
+#include <iostream>
+
+int
+main()
+{
+   std::cout << "Hello world\n";
+}
+```
+
+Add it to git repo
+
+```sh
+coder@3929e2690e0e:~/myproject$ nano hello.cpp
+coder@3929e2690e0e:~/myproject$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	hello.cpp
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+coder@3929e2690e0e:~/myproject$ git add hello.cpp
+coder@3929e2690e0e:~/myproject$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   hello.cpp
+```
+
+Now commit the changes. You can use `nano` editor for your commit message. Make sure that first line is short (less than 80 characters) and title of the changes.
+
+```sh
+coder@3929e2690e0e:~/myproject$ git commit
+[master (root-commit) e890de6] This is a hello world program
+ 1 file changed, 7 insertions(+)
+ create mode 100644 hello.cpp
+coder@3929e2690e0e:~/myproject$ git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+coder@3929e2690e0e:~/myproject$ git log --oneline
+e890de6 (HEAD -> master) This is a hello world program
+```
+
+## Push the changes
+
+Now you are ready to publish the changes to your teammates.
+
+```sh
+coder@3929e2690e0e:~/myproject$ git push origin HEAD:refs/for/master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 377 bytes | 377.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: Processing changes: refs: 1, new: 1, done
+remote: commit e890de6: warning: too many message lines longer than 72 characters; manually wrap lines
+remote:
+remote: SUCCESS
+remote:
+remote:   http://192.168.88.5:8080/c/myproject/+/1 This is a hello world program [NEW]
+remote:
+To ssh://192.168.88.5:29418/myproject
+ * [new reference]   HEAD -> refs/for/master
+```
 
 ## References
 
