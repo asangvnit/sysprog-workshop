@@ -200,6 +200,10 @@ Remaining steps must be done in the browser by [marking the comments as Done](im
 
 Reviewer sees that all comments are resolved and [replies with +2](images/gerrit-reviewer-ok-to-submit.png).
 
+Submitter refreshes his view and [sees](submitter-ready-to-submit.png) that the status has changed from `Active` to `Ready to submit` and `Submit requirements` are green.
+
+Administrator decides that he is statisfied and clicks `Submit` button to [merge the changes](images/administrator-merges-changes.png) to the `master` branch. After this status of the review changes to `Merged`. Now everyone can *see* the changes when the pull the latest version from the server.
+
 ## References
 
 - [Gerrit workflow](https://gerrit-review.googlesource.com/Documentation/intro-gerrit-walkthrough.html)
