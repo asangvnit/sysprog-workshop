@@ -10,19 +10,19 @@ Scalable distributed version control system (VCS) that's most widely used and we
 
 Git is preinstalled on almost all linux systems. Git clients are also available for windows and MacOS. There are some one-line configuration steps you need to do before working with git on your system
 
-[Demo1 - Configuration](git-demos/git-config-setup.svg)
+[![asciicast](https://asciinema.org/a/aqguNuYKYZ95f97IInF6vzbos.svg)](https://asciinema.org/a/aqguNuYKYZ95f97IInF6vzbos)
 
 ### Step 2 - Setting up the repository
 
 Second step is to setup a git repository i.e. the *master copy*.
 
-[Demo2 - Setup Repository](git-demos/git-repo-setup.svg)
+[![asciicast](https://asciinema.org/a/0x8A4o7VPxrFxj0whwVj5X24o.svg)](https://asciinema.org/a/0x8A4o7VPxrFxj0whwVj5X24o)
 
 ### Step 3 - Cloning the repository and working with it
 
 Now that the repository is setup, you need to *clone* it. This is the working copy of the repository on your system where all your commit as first submitted. Periodically, you can *push* the changes to the master repository - also pulling from it to get the changes other teammates are making.
 
-[Demo3 - Cloing Repository](git-demos/git-clone-demo.svg)
+[![asciicast](https://asciinema.org/a/KK9P6tChHWpd2Y1wbowlojCRe.svg)](https://asciinema.org/a/KK9P6tChHWpd2Y1wbowlojCRe)
 
 ### Step 4 - Collaborating with others
 
