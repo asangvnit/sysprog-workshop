@@ -4,6 +4,7 @@ You should connect to Gerrit from your `code-server` [container](Setup.md#instal
  
 ```sh
 $ docker exec -it code-server /bin/bash
+coder@3929e2690e0e:~
 ```
 
 ## Git Configuration
