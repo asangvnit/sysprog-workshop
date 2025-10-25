@@ -307,3 +307,4 @@ You can find more information at [proc filesystem](https://www.kernel.org/doc/ht
 ## References
 1. [Executable and Linkable Format (ELF)](https://refspecs.linuxbase.org/elf/elfspec.pdf)
 2. [System V Application Binary Interface (ABI)](https://refspecs.linuxbase.org/elf/x86_64-SysV-psABI.pdf)
+3. [Linux /proc filesystem](https://github.com/torvalds/linux/tree/master/fs/proc)
