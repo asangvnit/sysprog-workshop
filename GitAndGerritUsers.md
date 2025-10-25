@@ -50,7 +50,9 @@ Open following url in web browser, [http://server-ip:8080/login](http://server-i
 
 ## Cloning a repository
 
-Once the administrator has created a project for you, you can [clone it](http://server-ip:8080/admin/repos/myproject,general) it:
+Once the administrator has created a project for you, you can [clone it](http://server-ip:8080/admin/repos/myproject,general) it. Make sure you copy the `SSH` command next to `Clone with commit-hook` as shown in the image below:
+
+<img src="images/gerrit-clone-cmd.png" alt="gerrit clone command" />
 
 ```sh
 coder@3929e2690e0e:~$ git clone "ssh://asang@server-ip:29418/myproject" && (cd "myproject" && mkdir -p `git rev-parse --git-dir`/hooks/ && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://server-ip:8080/tools/hooks/commit-msg && chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
