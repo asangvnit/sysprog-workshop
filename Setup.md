@@ -17,7 +17,7 @@ You need to install Linux on your system if you are not running it already. Of c
 
 VirtualBox is more GUI driven and simple to use. Multipass is easier to use and customize. So we will use `multipass` for this workshop. You also need *Docker* for running VS Code [code-server](https://github.com/coder/code-server) inside a browser.  We also need tools like `cmake`, GNU/Clang C++ compiler, GDB etc.
 
-### Install docker
+## Install docker
 
 We are assuming that everyone has a relatively modern Linux/MacOS laptop that’s connected to the internet. This workshop involves downloading software from the internet and accessing other machines on the LAN. In order to get started, make sure that you have the latest version of [docker desktop](https://www.docker.com/products/docker-desktop/) installed. Install it and open the terminal window from inside the docker application. Then run following commands to pull the code-server image from the docker hub and make sure that it is successfully installed (On linux/macos you might need to use sudo while running any of the docker commands)
 
@@ -57,6 +57,8 @@ Now we are almost ready. We just need to install a few extensions. Here is the l
 - Git History
 
 Now we can proceed to installing `multipass`.
+
+## Installing multpass
 
 ### Installing multipass on MacOS
 
@@ -129,7 +131,7 @@ See "man sudo_root" for details.
 ubuntu@sysprog:~$
 ```
 
-### Installing multipass on Windows
+## Installing multipass on Windows
 
 [Download](https://canonical.com/multipass/download/windows) multipass for windows and run the installer. During installation, when prompted use Microsoft's [Hyper-V](https://en.wikipedia.org/wiki/Hyper-V) as the [Hypervisor](https://en.wikipedia.org/wiki/Hypervisor). Once installed, you can go to the command prompt and create an ubuntu instance. Open `cmd` window and execute following commands:
 ```sh
@@ -137,6 +139,9 @@ C:\>cd C:\Program Files\Multipass\bin
 C:\Program Files\Multipass\bin>multipass version
 multipass   1.16.1+win
 multipassd  1.16.1+win
+
+### Creating ubuntu instance on Windows
+
 C:\Program Files\Multipass\bin>multipass launch --name sysprog --cpus 4 --memory 4G --disk 10G 24.04
 Launched: sysprog
 
