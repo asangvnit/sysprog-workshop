@@ -24,7 +24,7 @@ We are assuming that everyone has a relatively modern Linux/MacOS laptop that’
 ### Installing code-server docker container
 
 ```sh
-$ sudo docker pull codercom/code-server
+$ docker pull codercom/code-server
 $ docker images
 REPOSITORY                  TAG         IMAGE ID       CREATED        SIZE
 codercom/code-server        latest      efee0826aa2d   3 days ago     745MB
@@ -34,7 +34,7 @@ Once the image is pulled, we can now create a container based on it and install 
 ```sh
 $ cd ~
 $ mkdir -p .config dev
-$ docker run --rm -d --name code-server -p 8081:8080 -v $PWD/dev:/workspace -v $PWD/.config:/home/coder/.config codercom/code-server
+$ docker run --rm -d --name code-server -p 8081:8080 -v dev:/workspace -v .config:/home/coder/.config codercom/code-server
 $ docker ps
 ```
 
