@@ -133,12 +133,18 @@ lrwx------ 1 ubuntu ubuntu 64 Oct 20 11:06 1 -> /dev/pts/0
 lrwx------ 1 ubuntu ubuntu 64 Oct 20 11:06 2 -> /dev/pts/0
 lrwx------ 1 ubuntu ubuntu 64 Oct 20 11:06 255 -> /dev/pts/0
 ```
-If you remember your OS course, 0, 1 & 2 are file descriptors for input, output and standard-err (`stdin`, `stdout`, `stderr`). `/dev/pts/0` means that they are all redirected to interactive `pesudo terminal` 0 where we are running the shell interactivately.
+If you remember your OS course, 0, 1 & 2 are file descriptors for input, output
+and standard-err (`stdin`, `stdout`, `stderr`). `/dev/pts/0` means that they
+are all redirected to interactive `pesudo terminal` 0 where we are running the
+shell interactively.
+
 ```sh
 ubuntu@sysprog:~$ tty
 /dev/pts/0
 ```
+
 Few more interesting bits
+
 ```sh
 ubuntu@sysprog:~$ file /proc/7128/exe
 /proc/7128/exe: symbolic link to /usr/bin/bash
@@ -164,7 +170,9 @@ NSsid:	7128
 Keep exploring. This is something that will teach you more than I ever can!
 
 ## Linux top command
-`top` is one of the most useful commands that you commonly use to look inside the system performance. To run it non interactively:
+`top` is one of the most useful commands that you commonly use to look inside
+the system performance. To run it non-interactively:
+
 ```sh
 ubuntu@sysprog:~$ top -b -n 1 -H -c
 top - 11:14:11 up  1:00,  2 users,  load average: 0.00, 0.00, 0.00
@@ -195,13 +203,20 @@ MiB Swap:      0.0 total,      0.0 free,      0.0 used.   3577.7 avail Mem
      21 root      20   0       0      0      0 S   0.0   0.0   0:00.00 [cpuhp/1]
      22 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 [idle_inject/1]
 ...
-To see the list of threads for a process
+```
+
+To see the list of threads for a process:
+
 ```sh
 ubuntu@sysprog:~$ ps -T $$
     PID    SPID TTY      STAT   TIME COMMAND
    1029    1029 pts/0    Ss     0:00 -bash
 ```
-Clearly, the shell proces has just one thread. `SPID` column indicates the thread-id which is same for the *main* thread within the process. For another process, I found this is the output:
+
+Clearly, the shell proces has just one thread. `SPID` column indicates the
+thread-id which is same for the *main* thread within the process. For another
+process, I found this is the output:
+
 ```sh
 ubuntu@sysprog:~$ ps -T 752
     PID    SPID TTY      STAT   TIME COMMAND
@@ -209,7 +224,8 @@ ubuntu@sysprog:~$ ps -T 752
     752     784 ?        Ssl    0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
 ```
 
-The process has two threads. In order to understand columns like `STAT`, see `man ps`. *man* is short for manual page.
+The process has two threads. In order to understand columns like `STAT`, see
+`man ps`. *man* is short for manual page.
 
 ### Resource information with top
 
@@ -239,9 +255,9 @@ si : time spent servicing software interrupts
 st : time stolen from this vm by the hypervisor
 ```
 
-## Process Memory Map
+## Process Memory Map (Virtual Memory Layout)
 
-`proc` filesystem allows you to look deeper into process memory layout
+`proc` filesystem allows you to look deeper into process memory layout:
 
 ```
 ubuntu@sysprog:~$ sudo cat /proc/$$/maps
@@ -300,9 +316,16 @@ c94a940b0000-c94a940b9000 rw-p  00170000 08:01 1802                       /usr/b
 - address - range of addresses mapped
 - perms - permission bits - r(read), w(write), x(execute), p(private), s(shared)
 
-First line has `x` bit set. So it maps to the `text` (or code) segment of `bash`. Second has `r` and `p` bits set. So its readonly process private data - `.rodata` segment. and the last line has `rw` and `p` set. So it represents `.bss` (global uninitialized variables) and `.data` (global initialized variables) sections of the executable.
+First line has `x` bit set. So it maps to the `text` (or code) segment of
+`bash`. Second has `r` and `p` bits set. So its readonly process private data -
+`.rodata` segment. and the last line has `rw` and `p` set. So it represents
+`.bss` (global uninitialized variables) and `.data` (global initialized
+variables) sections of the executable.
 
-You can find more information at [proc filesystem](https://www.kernel.org/doc/html/latest/filesystems/proc.html). Few interesting things to explore on your own are `[heap]`, `[stack`], `[vdso]`, `[vvar]`. You can explore these on your own!
+You can find more information at [proc
+filesystem](https://www.kernel.org/doc/html/latest/filesystems/proc.html). Few
+interesting things to explore on your own are `[heap]`, `[stack`], `[vdso]`,
+`[vvar]`. You can explore these on your own! (When you do lab!)
 
 ## References
 1. [Executable and Linkable Format (ELF)](https://refspecs.linuxbase.org/elf/elfspec.pdf)
