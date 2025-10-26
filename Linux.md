@@ -1,8 +1,8 @@
 # Introduction to linux
 
-Most widely used **NIX based operating system in the world today. Has many variants and forks - but `debian`, `ubuntu` and `fedora` are some of the most widely used ones. You can install it on your laptop directly. Details instructions can be found in [Setup](Setup.md). Please follow those instructions (if you haven't done so already and then come back here).
+Most widely used **NIX based operating system in the world today. Has many variants and forks - but `debian`, `ubuntu` and `fedora` are some of the most widely used ones. You can install it on your laptop directly. Detailed instructions can be found in [Setup](Setup.md). Please follow those instructions (if you haven't done so already and then come back here).
 
-First, you connect to the multipass ubuntu install you had created earlier.
+First, you connect to the `multipass ubuntu` instance you had created earlier (Those running on Windows can omit `sudo` on Window cmd prompt).
 
 ```sh
 $ sudo multipass shell sysprog
