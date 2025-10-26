@@ -58,7 +58,7 @@ Now we are almost ready. We just need to install a few extensions. Here is the l
 
 Now we can proceed to installing `multipass`.
 
-## Installing multipass on MacOS
+### Installing multipass on MacOS
 
 First, you need to install [HomeBrew](https://brew.sh/)
 ```sh
@@ -129,7 +129,7 @@ See "man sudo_root" for details.
 ubuntu@sysprog:~$
 ```
 
-## Installing multipass on Windows
+### Installing multipass on Windows
 
 [Download](https://canonical.com/multipass/download/windows) multipass for windows and run the installer. During installation, when prompted use Microsoft's [Hyper-V](https://en.wikipedia.org/wiki/Hyper-V) as the [Hypervisor](https://en.wikipedia.org/wiki/Hypervisor). Once installed, you can go to the command prompt and create an ubuntu instance. Open `cmd` window and execute following commands:
 ```sh
@@ -187,7 +187,7 @@ ubuntu@sysprog:~$ uname -r
 ```
 Here `aarch64` indicates that we are running on 64-bit ARM processor. Linux kernel version is `6.8.0-85-generic`.
 
-## Installing prerequisites inside Unbutu instance
+### Installing prerequisites inside unbutu instance
 
 Install the necessary tools and make sure they work
 ```sh
