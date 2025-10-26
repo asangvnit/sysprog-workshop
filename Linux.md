@@ -45,6 +45,7 @@ For system version details, run
 ubuntu@sysprog:~$ uname -a
 Linux sysprog 6.8.0-85-generic #85-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 18 15:21:04 UTC 2025 aarch64 aarch64 aarch64 GNU/Linux
 ubuntu@sysprog:~$ uname -r
+6.8.0-86-generic
 ```
 Here `aarch64` indicates that we are running on 64-bit ARM processor. Linux kernel version is `6.8.0-85-generic`. Now we are ready to get going
 
@@ -57,7 +58,6 @@ ubuntu@sysprog:~$ ps
 ```
 Every proces under linux has a 32-bit identifier. It gets its down private virtual memory space. Each process runs a single `thread` by default (unless you create more). To see the list of all processes running on a system:
 ```sh
-ubuntu@sysprog:~$ ps -aef
 ubuntu@sysprog:~$ ps -aef
 UID          PID    PPID  C STIME TTY          TIME CMD
 root           1       0  0 10:13 ?        00:00:01 /usr/lib/systemd/systemd --system --deserialize=24
