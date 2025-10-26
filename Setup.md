@@ -83,10 +83,7 @@ installer: Installing at base path /
 installer: The install was successful.
  multipass was successfully installed!
 ```
-Now you can go to the command prompt and create ubuntu instance.
-
-### Creating ubuntu instance on MacOS
-Here we are creating an Ubuntu instance with 4GB RAM, 10GB diskspace and 4 CPUs. You can choose different parameters based on your host's capabilities.
+Now you can go to the command prompt and create ubuntu instance. Here, we create an ubuntu instance with 4GB RAM, 10GB diskspace and 4 CPUs. You can choose different parameters based on your system capabilities.
 
 ```sh
 $ sudo multipass launch --name sysprog --cpus 4 --memory 4G --disk 10G 24.04
@@ -95,7 +92,9 @@ $ sudo multipass list
 Name                    State             IPv4             Image
 sysprog                 Running           192.168.2.2      Ubuntu 24.04 LTS
 ```
+
 Now connect to it:
+
 ```sh
 $ sudo multipass shell sysprog
 Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
@@ -140,8 +139,9 @@ C:\Program Files\Multipass\bin>multipass version
 multipass   1.16.1+win
 multipassd  1.16.1+win
 
-### Creating ubuntu instance on Windows
+Create ubuntu instance on Windows following similar steps as explain above.
 
+```
 C:\Program Files\Multipass\bin>multipass launch --name sysprog --cpus 4 --memory 4G --disk 10G 24.04
 Launched: sysprog
 
@@ -149,7 +149,9 @@ C:\Program Files\Multipass\bin>multipass list
 Name                    State             IPv4             Image
 sysprog                 Running           192.168.115.22   Ubuntu 24.04 LTS
 ```
+
 Now connect to it:
+
 ```sh
 C:\Program Files\Multipass\bin>multipass shell sysprog
 Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
@@ -192,9 +194,16 @@ ubuntu@sysprog:~$ uname -r
 ```
 Here `aarch64` indicates that we are running on 64-bit ARM processor. Linux kernel version is `6.8.0-85-generic`.
 
-### Installing prerequisites inside unbutu instance
+## Installing prerequisites inside unbutu instance
 
-Install the necessary tools and make sure they work
+Run following command to connect to `sysprog` instance:
+
+```
+$ multipass shell sysprog
+```
+
+Install the necessary tools and make sure they work.
+
 ```sh
 $ sudo apt update
 $ sudo apt install -y linux-tools-common linux-tools-generic
