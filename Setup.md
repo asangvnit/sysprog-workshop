@@ -40,7 +40,7 @@ $ docker ps
 
 Now you can point your web browser to [http://localhost:8081/](http://localhost:8081/). You will be prompted to enter a password. This can be found by using the following command:
 ```
-docker exec -it code-server cat  /home/coder/.config/code-server/config.yaml
+$ docker exec -it code-server cat /home/coder/.config/code-server/config.yaml
 ```
 
 Copy the password displayed after `password:` prompt and use it to launch the vscode right inside your browser. From the menu for vscode, search for “Terminal | New Terminal” and run the following commands:
@@ -64,7 +64,7 @@ Now we can proceed to installing `multipass`.
 
 First, you need to install [HomeBrew](https://brew.sh/)
 ```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 Now we are ready to install multipass.
