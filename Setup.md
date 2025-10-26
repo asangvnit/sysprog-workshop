@@ -40,13 +40,13 @@ $ docker ps
 
 Now you can point your web browser to [http://localhost:8081/](http://localhost:8081/). You will be prompted to enter a password. This can be found by using the following command:
 ```
-sudo docker exec -it code-server cat  /home/coder/.config/code-server/config.yaml | grep password:
+docker exec -it code-server cat  /home/coder/.config/code-server/config.yaml
 ```
 
-Copy the password displayed after password: prompt and use it to launch the vscode right inside your browser. From the menu for vscode, search for “Terminal | New Terminal” and run the following commands:
+Copy the password displayed after `password:` prompt and use it to launch the vscode right inside your browser. From the menu for vscode, search for “Terminal | New Terminal” and run the following commands:
 
 ```sh
-$ sudo docker exec -it code-server /bin/bash
+$ docker exec -it code-server /bin/bash
 $ sudo apt update
 $ sudo apt install -y apt-file bind9-dnsutils build-essential gdb git cmake iputils-ping valgrind iproute2
 ```
