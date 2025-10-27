@@ -1,3 +1,12 @@
+<style>
+code {
+  white-space: pre-wrap !important;
+}
+pre {
+  white-space: pre-wrap !important;
+  word-break: break-all !important;
+}
+</style>
 # Introduction to linux
 
 Most widely used **NIX based operating system in the world today. Has many variants and forks - but `debian`, `ubuntu` and `fedora` are some of the most widely used ones. You can install it on your laptop directly. Detailed instructions can be found in [Setup](Setup.md). Please follow those instructions (if you haven't done so already and then come back here).
