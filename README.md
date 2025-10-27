@@ -17,7 +17,7 @@ System Programming Workshop @Palloti College on 1st Nov 2025
 6. [Analyzing Performance](perf-demo/README.md)
 7. [Valgrind and Other tools](valgrind-demo/README.md)
 
-## Before you start the lab.. 
+## Lab Assignements
 
 - [Check your local setup](GitAndGerritUsers.md)
 - [Complete the assignments](Assignments.md)
