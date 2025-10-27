@@ -1,5 +1,5 @@
 # Introduction to docker
-- Haven't heard of [docker](https://docker.com/)? We you sleeping under a rock?
+- Haven't heard of [docker](https://docker.com/)? Were you sleeping under a rock?
 - Official definition is not very useful
  > Docker is an open platform for developing, shipping, and running applications
 - Its a platform for developing and deploying applications in *containers*
