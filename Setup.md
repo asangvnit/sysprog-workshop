@@ -57,7 +57,7 @@ Now we are almost ready. We just need to install a few extensions. Here is the l
 
 Now we can proceed to installing `multipass`.
 
-## Installing multpass
+## Installing multipass
 
 ### Installing multipass on MacOS
 
