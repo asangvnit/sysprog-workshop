@@ -207,3 +207,8 @@ In order ot understand branch prediction stats, see this:
 | **BTm** | *Total branches mispredicted*     | Aggregate of conditional + indirect mispredictions.                                                      |
 | **BTc** | *Total branches executed*         | Aggregate of conditional + indirect executed branches.                                                   |
 
+## Other useful tools
+
+- [pstack](https://linux.die.net/man/1/pstack) prints a stacktrace of a running process
+- [lsof](https://www.man7.org/linux/man-pages/man8/lsof.8.html) list open files
+- [netstat](https://linux.die.net/man/8/netstat) Print network connections, routing tables, interface statistics

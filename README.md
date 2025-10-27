@@ -15,7 +15,7 @@ System Programming Workshop @Palloti College on 1st Nov 2025
 5. [Git Basics](GitBasics.md)
 5. [Working with cmake](cmakedemo/README.md)
 6. [Analyzing Performance](perf-demo/README.md)
-7. [Valgrind and Other tools](valgrind-demo/README.md)
+7. [Leak detection and Other tools](valgrind-demo/README.md)
 
 ## Lab Assignements
 
