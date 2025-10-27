@@ -4,7 +4,7 @@
 
 ## Installing cmake
 
-On windows [Download cmake binary installer](https://cmake.org/download/) and double click the installed files to completion. On other systems the installation is straightforward
+On windows [Download cmake binary installer](https://cmake.org/download/), double click the installer file and follow the instructions to completion. On other systems, the installation is straightforward.
 
 ### Debian/Ubuntu Linux
 
