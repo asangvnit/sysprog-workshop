@@ -17,7 +17,7 @@ System Programming Workshop @Palloti College on 1st Nov 2025
 6. [Analyzing Performance](perf-demo/README.md)
 7. [Leak detection and Other tools](valgrind-demo/README.md)
 
-## Lab Assignements
+## Lab Assignments
 
 - [Check your local setup](GitAndGerritUsers.md)
 - [Complete the assignments](Assignments.md)
