@@ -137,10 +137,11 @@ C:\>cd C:\Program Files\Multipass\bin
 C:\Program Files\Multipass\bin>multipass version
 multipass   1.16.1+win
 multipassd  1.16.1+win
+```
 
 Create ubuntu instance on Windows following similar steps as explain above.
 
-```
+```sh
 C:\Program Files\Multipass\bin>multipass launch --name sysprog --cpus 4 --memory 4G --disk 10G 24.04
 Launched: sysprog
 
