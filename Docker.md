@@ -15,9 +15,13 @@
 
 ## Docker Architecture
 
+Docker desktop contains all the basic components to create and run docker images. It supports CLI as well as GUI interface. Following diagram shows the basic components:
+
 <div align="center">
   <img src="images/docker-architecture.png" alt="architecture" width="400">
 </div>
+
+`Docker engine` is a background service and that runs on the *host* and runs and manages both the containers and images.
 
 ## Getting Started
 - Easiest way to use one of existing image on [docker hub](https://hub.docker.com/) as a base image. Thousands of useful base images exist for things like Apache Web Server, MySql Database Server and many more.
