@@ -15,7 +15,9 @@ You need to install Linux on your system if you are not running it already. Of c
 - WSL (Windows Services for Linux) - works on Windows
 - Parallels - works on Mac and is usually an overkill
 
-VirtualBox is more GUI driven and simple to use. Multipass is easier to use and customize. So we will use `multipass` for this workshop. You also need *Docker* for running VS Code [code-server](https://github.com/coder/code-server) inside a browser.  We also need tools like `cmake`, GNU/Clang C++ compiler, GDB etc.
+VirtualBox is more GUI driven and simple to use. Multipass is easier to use and customize.
+
+We will use `multipass` for this workshop for running performance and leak monitoring tools. For programming in C++, we will need [Visual Studio Code](https://code.visualstudio.com/download). To make things easier, we will use *Docker* for running VS Code [code-server](https://github.com/coder/code-server) inside a docker container. Inside the container, we will tools like `cmake`, GNU/Clang C++ compiler, GDB etc.
 
 ## Install docker
 
@@ -129,7 +131,7 @@ See "man sudo_root" for details.
 ubuntu@sysprog:~$
 ```
 
-## Installing multipass on Windows
+### Installing multipass on Windows
 
 [Download](https://canonical.com/multipass/download/windows) multipass for windows and run the installer. During installation, when prompted use Microsoft's [Hyper-V](https://en.wikipedia.org/wiki/Hyper-V) as the [Hypervisor](https://en.wikipedia.org/wiki/Hypervisor). Once installed, you can go to the command prompt and create an ubuntu instance. Open `cmd` window and execute following commands:
 ```sh
