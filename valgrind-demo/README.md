@@ -1,5 +1,13 @@
 # Leaks, locks and much more
 
+When writing large programs that run in the background - servers/services, its is not enough to validate that they function correctly. It is extremely important to ensure that they do not *Leak* resources. Resource leaks can be any one of the following:
+
+- Memory Leaks - Forgetting to free memory that is no longer used.
+- File descriptor leaks - Forgetting to close the files that we are no longer using.
+- Networking socket leaks - Unused sockets that we forget to close.
+
+In addition, multi-threaded programs can potentially deadlock due to inability to aquire locks due to circular dependencies or forgetting to release a lock.
+
 [Valgrind](https://valgrind.org/) is an instrumentation framework for building dynamic analysis tools. Valgrind tools can automatically detect many memory management and threading bugs, and profile your programs in detail.
 
 ## Simple example 
