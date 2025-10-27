@@ -36,7 +36,7 @@ Docker desktop contains all the basic components to create and run docker images
 
 ```sh
 mkdir public-html
-touch publich-html/index.html
+touch public-html/index.html
 ```
 
 ### Create a Dockerfile for your container
