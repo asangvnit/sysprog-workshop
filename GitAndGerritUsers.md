@@ -8,7 +8,7 @@ coder@3929e2690e0e:~
 ```
 
 ## Git Configuration
-Make sire you have done this (replace My Name with your name and email address with the one you used to register with the gerrit server):
+Make sure you have done this (replace My Name with your name and email address with the one you used to register with the gerrit server):
 ```sh
 coder@3929e2690e0e:~ git config --global user.name "My name"
 coder@3929e2690e0e:~ git config --global user.email myname@example.com
