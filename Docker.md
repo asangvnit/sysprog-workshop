@@ -3,7 +3,7 @@
 - Official definition is not very useful
  > Docker is an open platform for developing, shipping, and running applications
 - Its a platform for developing and deploying applications in *containers*
-  - Provides isolation - network, filesystem, resources
+  - Provides isolation - network, filesystem, resources (CPU, Memory, ...)
   - Sandbox environment that doesn't change
   - Testing on different environments
 - *Much more efficient* than full Virtualization. Uses the same kernel as host operating system (on linux)
