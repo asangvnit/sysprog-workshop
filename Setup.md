@@ -161,7 +161,7 @@ ubuntu@sysprog:~$
 
 ### Installing multipass on Windows
 
-[Download](https://canonical.com/multipass/download/windows) multipass for windows and run the installer. During installation, when prompted use Microsoft's [Hyper-V](https://en.wikipedia.org/wiki/Hyper-V) as the [Hypervisor](https://en.wikipedia.org/wiki/Hypervisor). Once installed, you can go to the command prompt and create an ubuntu instance. Open `cmd` window and execute following commands:
+[Download](https://canonical.com/multipass/download/windows) multipass for windows and run the installer. During installation, when prompted use Microsoft's [Hyper-V](https://en.wikipedia.org/wiki/Hyper-V) as the [Hypervisor](https://en.wikipedia.org/wiki/Hypervisor). If you have `Windows 10 Home` edition, which doesn't supports Hyper-V, you will need to download and install [VirtualBox](https://virtualbox.org/). So please do that first. Once multipass is installed, you can go to the command prompt and create an ubuntu instance. Open `cmd` window and execute following commands:
 ```sh
 C:\>cd C:\Program Files\Multipass\bin
 C:\Program Files\Multipass\bin>multipass version
