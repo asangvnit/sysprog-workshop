@@ -2,13 +2,13 @@
 
 ## What is git and why is it required?
 
-Scalable distributed version control system (VCS) that's most widely used and well supported. When you develop software, you need to able to track changes to it and be able to continue to develop it while being able to release working versions to your customers. Version control system allows you to do that. [Git](https://git-scm.com/) is also used by linux kernel. Being distributed means that you have a complete copy the *repository* on your machine thereby allowing you to look at the history, commit changes locally and synchronize with others when you are ready
+Scalable distributed version control system (VCS) that's most widely used and well supported. When you develop software, you need to able to track changes to it and be able to continue to develop it while being able to release working versions to your customers. Version control system allows you to do that. [Git](https://git-scm.com/) is also used by Linux kernel. Being distributed means that you have a complete copy the *repository* on your machine thereby allowing you to look at the history, commit changes locally and synchronize with others when you are ready.
 
 ## How do you get started
 
 ### Step 1 - Basic configuration
 
-Git is preinstalled on almost all linux systems. Git clients are also available for windows and MacOS. There are some one-line configuration steps you need to do before working with git on your system
+Git is preinstalled on almost all Linux systems. Git clients are also available for Windows and MacOS. There are some one-line configuration steps you need to do before working with git on your system
 
 [![asciicast](https://asciinema.org/a/aqguNuYKYZ95f97IInF6vzbos.svg)](https://asciinema.org/a/aqguNuYKYZ95f97IInF6vzbos)
 
