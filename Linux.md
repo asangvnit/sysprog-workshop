@@ -6,7 +6,7 @@ It is the most widely used **NIX based operating system in the world today. Has 
 
 ## Getting started
 
-You can install linux on your laptop/desktop directly. Alternatively, you can use `multipass` to install it inside a `virtual machine` as per detailed instructions can be found in [Setup](Setup.md). Please follow those instructions (if you haven't done so already and then come back here).
+You can install linux on your laptop/desktop directly. Alternatively, you can use `multipass` to install it inside a `virtual machine` as per the detailed instructions in [Setup](Setup.md). Please follow those instructions (if you haven't done so already and then come back here).
 
 Now we are connect to the multipass ubuntu instance `sysprog` you had created earlier (Those running on Windows can omit `sudo` on Window cmd prompt).
 
