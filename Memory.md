@@ -16,7 +16,7 @@ graph TB
         L3["L3 Cache<br/>8 MB · 16-way · ~30–50 cycles<br/>(Shared, last-level)"]
     end
 
-    MEM["Main Memory (DRAM)<br/>~50–150 ns"]
+    MEM["Main Memory (DRAM)<br/>8-64 GB . ~50–150 ns"]
 
     CPU -->|load/store| L1
     L1 -->|miss| L2
