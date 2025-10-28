@@ -197,7 +197,7 @@ ubuntu@sysprog:~$ uname -r
 ```
 Here `aarch64` indicates that we are running on 64-bit ARM processor. Linux kernel version is `6.8.0-85-generic`.
 
-## Installing prerequisites inside unbutu instance
+## Installing prerequisites inside ubuntu instance
 
 Run following command to connect to `sysprog` instance:
 
