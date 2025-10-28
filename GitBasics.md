@@ -14,7 +14,7 @@ Git is preinstalled on almost all Linux systems. Git clients are also available 
 
 ### Step 2 - Setting up the repository
 
-Second step is to setup a git repository i.e. the *master copy*.
+Second step is to setup a git repository i.e. the *master copy*. Here is how:
 
 [![asciicast](https://asciinema.org/a/0x8A4o7VPxrFxj0whwVj5X24o.svg)](https://asciinema.org/a/0x8A4o7VPxrFxj0whwVj5X24o)
 
@@ -26,7 +26,7 @@ Now that the repository is setup, you need to *clone* it. This is the working co
 
 ### Step 4 - Collaborating with others - conflicts and rebasing
 
-One of the main benefits of using a VCS is to be able to collaborate with others effectively and get the work done efficiently and reliably. There are several ways in which you can do that. Here is the simplest way (not recommended in prodcution):
+One of the main benefits of using a VCS is to be able to collaborate with others effectively and get the work done efficiently and reliably. There are several ways in which you can do that. Following example shows how two users who edit the same file can update the respository after resolving the conflicts. 
 
 [![asciicast](https://asciinema.org/a/SIIKkqfOtpyBslMHyyz4XWmx3.svg)](https://asciinema.org/a/SIIKkqfOtpyBslMHyyz4XWmx3)
 
