@@ -33,13 +33,21 @@ codercom/code-server        latest      efee0826aa2d   3 days ago     745MB
 ```
 Once the image is pulled, we can now create a container based on it and install all the necessary software.
 
+#### On Windows host
+
+```sh
+C:\Users\Amar> mkdir config dev
+C:\Users\Amar> docker run -d --name code-server -p 8081:8080 -v dev:/workspace -v config:/home/coder/.config codercom/code-server
+C:\Users\Amar>docker ps
+```
+
+#### On Linux/MacOS host
 ```sh
 $ cd ~
 $ mkdir config dev
-$ # On linux and MacOS hosts
 $ chmod 777 -R config dev
-$ docker run -d --name code-server -p 8081:8080 -v dev:/workspace -v config:/home/coder/.config codercom/code-server
-$ docker ps
+$ sudo docker run -d --name code-server -p 8081:8080 -v dev:/workspace -v config:/home/coder/.config codercom/code-server
+$ sudo docker ps
 ```
 
 Now you can point your web browser to [http://localhost:8081/](http://localhost:8081/). You will be prompted to enter a password. This can be found by using the following command:
