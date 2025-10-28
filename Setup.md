@@ -11,7 +11,7 @@ In order to make the most from this seminar, we expect that you have a good back
 
 ## System Requirements 
 
-In order to follow along through the theory and lab sessions for this seminar, you will need to install Linux on your laptop/desktop if you are not running it already. In fact even if your laptop is running some flavour or Linux already, we strongly recommend that you follow the steps given in this document. There are other options that we considered for this workshop. Here are some of them:
+In order to follow along through the theory and lab sessions for this seminar, you will need to install Linux on your laptop/desktop if you are not running it already. In fact even if your laptop is running some flavour or Linux already, we strongly recommend that you follow the steps given in this document. There are many options that we considered for this workshop. Here are some of them:
 
 - [VirtualBox](https://virtualbox.org/) - works on Windows & Mac
 - [Multipass](https://canonical.com/multipass) - works on Windows & Mac
