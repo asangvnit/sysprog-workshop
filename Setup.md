@@ -35,9 +35,10 @@ Once the image is pulled, we can now create a container based on it and install 
 
 ```sh
 $ cd ~
-$ mkdir -p .config dev
+$ mkdir config dev
+$ # On linux and MacOS hosts
 $ chmod 777 -R .config dev
-$ docker run --rm -d --name code-server -p 8081:8080 -v dev:/workspace -v .config:/home/coder/.config codercom/code-server
+$ docker run -d --name code-server -p 8081:8080 -v dev:/workspace -v config:/home/coder/.config codercom/code-server
 $ docker ps
 ```
 
