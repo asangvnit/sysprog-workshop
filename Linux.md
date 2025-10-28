@@ -1,8 +1,14 @@
 # Introduction to linux
 
-Most widely used **NIX based operating system in the world today. Has many variants and forks - but `debian`, `ubuntu` and `fedora` are some of the most widely used ones. You can install it on your laptop directly. Detailed instructions can be found in [Setup](Setup.md). Please follow those instructions (if you haven't done so already and then come back here).
+## Why study linux?
 
-First, you connect to the `multipass ubuntu` instance you had created earlier (Those running on Windows can omit `sudo` on Window cmd prompt).
+It is the most widely used **NIX based operating system in the world today. Has many variants and forks - but `debian`, `ubuntu` and `fedora` are some of the most widely used ones. There is hardly a place that you will work at that does not use linux somewhere. It is important that you know bit more than the bare minimum. So lets dive in.
+
+## Getting started
+
+You can install linux on your laptop/desktop directly. Alternatively, you can use `multipass` to install it inside a `virtual machine` as per detailed instructions can be found in [Setup](Setup.md). Please follow those instructions (if you haven't done so already and then come back here).
+
+Now we are connect to the multipass ubuntu instance `sysprog` you had created earlier (Those running on Windows can omit `sudo` on Window cmd prompt).
 
 ```sh
 $ sudo multipass shell sysprog
