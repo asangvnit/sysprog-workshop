@@ -8,7 +8,7 @@ It is the most widely used **NIX based operating system in the world today. Has 
 
 You can install linux on your laptop/desktop directly. Alternatively, you can use `multipass` to install it inside a `virtual machine` as per the detailed instructions in [Setup](Setup.md). Please follow those instructions (if you haven't done so already and then come back here).
 
-Now we are connect to the multipass ubuntu instance `sysprog` you had created earlier (Those running on Windows can omit `sudo` on Window cmd prompt).
+Now we are ready to connect to the multipass ubuntu instance `sysprog` we had created earlier (Those running on Windows can omit `sudo` on Window cmd prompt).
 
 ```sh
 $ sudo multipass shell sysprog
@@ -56,13 +56,14 @@ ubuntu@sysprog:~$ uname -r
 Here `aarch64` indicates that we are running on 64-bit ARM processor. Linux kernel version is `6.8.0-85-generic`. Now we are ready to get going
 
 ## List of processes
+
 ```sh
 ubuntu@sysprog:~$ ps
     PID TTY          TIME CMD
    1810 pts/0    00:00:00 bash
    1821 pts/0    00:00:00 ps
 ```
-Every proces under linux has a 32-bit identifier. It gets its down private virtual memory space. Each process runs a single `thread` by default (unless you create more). To see the list of all processes running on a system:
+Every process under Linux has a 32-bit identifier. It gets its down private virtual memory space. Each process runs a single `thread` by default (unless you create more). To see the list of all processes running on a system:
 ```sh
 ubuntu@sysprog:~$ ps -aef
 UID          PID    PPID  C STIME TTY          TIME CMD
