@@ -1,6 +1,6 @@
 # Agenda
 
-System Programming Workshop @Palloti College on 1st Nov 2025
+Systems Programming Workshop @Palloti College on 1st Nov 2025
 
 ## Order of Presentations
 

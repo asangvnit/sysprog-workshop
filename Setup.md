@@ -1,6 +1,9 @@
 # Prerequisites for Systems Programming Workshop
 
 ## What you should know?
+
+In order to make the most from this seminar, we expect that you have a good background in following areas.
+
 - Basic Computer Architecture
 - Basic Operating System Concepts
 - Basic Shell commands
@@ -8,22 +11,25 @@
 
 ## System Requirements 
 
-You need to install Linux on your system if you are not running it already. Of course if you love your Windows/MacOS too much there are other options:
+In order to follow along through the theory and lab sessions for this seminar, you will need to install Linux on your laptop/desktop if you are not running it already. In fact even if your laptop is running some flavour or Linux already, we strongly recommend that you follow the steps given in this document. There are other options that we considered for this workshop. Here are some of them:
 
 - [VirtualBox](https://virtualbox.org/) - works on Windows & Mac
 - [Multipass](https://canonical.com/multipass) - works on Windows & Mac
 - WSL (Windows Services for Linux) - works on Windows
 - Parallels - works on Mac and is usually an overkill
 
-VirtualBox is more GUI driven and simple to use. Multipass is easier to use and customize.
+VirtualBox is more GUI driven and simple to use. However, Multipass is easier to use and customize and CLI based making it an ideal choice.  We will use `multipass` for this workshop for running performance and leak monitoring tools covered during the theory session of this workshop.
 
-We will use `multipass` for this workshop for running performance and leak monitoring tools. For programming in C++, we will need [Visual Studio Code](https://code.visualstudio.com/download). To make things easier, we will use *Docker* for running VS Code [code-server](https://github.com/coder/code-server) inside a docker container. Inside the container, we will tools like `cmake`, GNU/Clang C++ compiler, GDB etc.
+For doing programming assignments in C++, you will need some code editor. [Visual Studio Code](https://code.visualstudio.com/download) is a good choice these days for most of the beginners. To make it easier to install VS Code and accompanying tools, we will use *Docker*. [code-server](https://github.com/coder/code-server) is a popular option for setting up VS Code inside a docker container and then using it directly from your Web Browser (Chrome/Microsoft Edge/Firefox etc). Inside the container, you will also need to install tools like `cmake`, GNU/Clang C++ compiler, GDB etc. So lets get started right away.
 
 ## Install docker
 
-We are assuming that everyone has a relatively modern Linux/MacOS laptop that’s connected to the internet. This workshop involves downloading software from the internet and accessing other machines on the LAN. In order to get started, make sure that you have the latest version of [docker desktop](https://www.docker.com/products/docker-desktop/) installed. Install it and open the terminal window from inside the docker application. Then run following commands to pull the code-server image from the docker hub and make sure that it is successfully installed (On linux/macos you might need to use sudo while running any of the docker commands)
+Make sure that you download and install the latest version of [docker desktop](https://www.docker.com/products/docker-desktop/) on your system i.e. laptop/desktop (referred to as `host` in the rest of this document). Install it and open the terminal window inside docker destkop. Then run following commands to pull the `code-server` image from the **docker hub**.
 
-### Installing code-server docker container
+### Installing code-server container
+
+Execute following commands inside the terminal windows inside `docker desktop` application
+
 
 ```sh
 $ docker pull codercom/code-server
@@ -31,14 +37,18 @@ $ docker images
 REPOSITORY                  TAG         IMAGE ID       CREATED        SIZE
 codercom/code-server        latest      efee0826aa2d   3 days ago     745MB
 ```
-Once the image is pulled, we can now create a container based on it and install all the necessary software.
+
+Once the image is pulled, we can now create a container based on it and install the necessary software.
 
 #### On Windows host
 
 ```sh
 C:\Users\Amar> mkdir config dev
-C:\Users\Amar> docker run -d --name code-server -p 8081:8080 -v dev:/workspace -v config:/home/coder/.config codercom/code-server
-C:\Users\Amar>docker ps
+C:\Users\Amar> docker run -d --name code-server -p 8081:8080 -v ./dev:/workspace -v ./config:/home/coder/.config codercom/code-server
+783a94d539dbecb76a2a4afb538569cb426296f94dd6b3f98f57f6540cb841ee
+C:\Users\Amar> docker ps
+CONTAINER ID   IMAGE                         COMMAND                  CREATED         STATUS         PORTS                                                                                          NAMES
+783a94d539db   codercom/code-server:latest   "/usr/bin/entrypoint…"   2 seconds ago   Up 2 seconds   0.0.0.0:8081->8080/tcp, [::]:8081->8080/tcp
 ```
 
 #### On Linux/MacOS host
@@ -46,16 +56,21 @@ C:\Users\Amar>docker ps
 $ cd ~
 $ mkdir config dev
 $ chmod 777 -R config dev
-$ sudo docker run -d --name code-server -p 8081:8080 -v dev:/workspace -v config:/home/coder/.config codercom/code-server
+$ sudo docker run -d --name code-server -p 8081:8080 -v ./dev:/workspace -v ./config:/home/coder/.config \
+   -u "$(id -u):$(id -g)" -e "DOCKER_USER=$USER" codercom/code-server
+783a94d539dbecb76a2a4afb538569cb426296f94dd6b3f98f57f6540cb841ee
 $ sudo docker ps
+CONTAINER ID   IMAGE                         COMMAND                  CREATED         STATUS         PORTS                                                                                          NAMES
+783a94d539db   codercom/code-server:latest   "/usr/bin/entrypoint…"   2 seconds ago   Up 2 seconds   0.0.0.0:8081->8080/tcp, [::]:8081->8080/tcp
 ```
 
 Now you can point your web browser to [http://localhost:8081/](http://localhost:8081/). You will be prompted to enter a password. This can be found by using the following command:
+
 ```
 $ docker exec -it code-server cat /home/coder/.config/code-server/config.yaml
 ```
 
-Copy the password displayed after `password:` prompt and use it to launch the vscode right inside your browser. From the menu for vscode, search for “Terminal | New Terminal” and run the following commands:
+Copy the password displayed after `password:` prompt and use it to login to VS Code inside your browser. From the menu for VSCode, search for “Terminal | New Terminal” and run the following commands:
 
 ```sh
 $ sudo apt update
@@ -63,6 +78,7 @@ $ sudo apt install -y apt-file bind9-dnsutils build-essential gdb git cmake iput
 ```
 
 Now we are almost ready. We just need to install a few extensions. Here is the list:
+
 - C/C++ Extension Pack
 - Gerrit
 - Git History
@@ -70,6 +86,8 @@ Now we are almost ready. We just need to install a few extensions. Here is the l
 Now we can proceed to installing `multipass`.
 
 ## Installing multipass
+
+The steps to install `multipass` are slightly different for Windows and MacOS. Following sections show you how.
 
 ### Installing multipass on MacOS
 
@@ -221,4 +239,5 @@ $ sudo apt update
 $ sudo apt install -y linux-tools-common linux-tools-generic
 $ sudo apt install -y apt-file bind9-dnsutils build-essential gdb git cmake iputils-ping valgrind iproute2
 ```
+
 I hope I didn’t miss anything. See you soon!
