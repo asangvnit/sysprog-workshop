@@ -26,7 +26,7 @@ Total time: 0.170326 s
 [ perf record: Captured and wrote 0.024 MB perf.data (18 samples) ]
 ```
 
-This produces a file `perf.data` in the current directory as shown above. There are multiple ways to analyze the output. Simples is
+This produces a file `perf.data` in the current directory as shown above. There are multiple ways to analyze the output. Simplest is to use `perf report` command as follows:
 
 ```sh
 $ sudo perf report -g --stdio
