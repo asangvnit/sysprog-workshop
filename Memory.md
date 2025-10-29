@@ -1,6 +1,6 @@
 # What Every Programmer Should Know..
 
-The reason why every programmer needs to know about how modern systems use Memory hierarchies, is it has a profound impact on performance of your application and how you design your data structures.
+Almost all modern systems use Memory Hierarchies. Understanding how that works and programming accordingly has a profound impact on performance of your application and how you choose, design, and tune your data structures.
 
 Most basic Operating System courses teach how Virtual Memory is used by modern operating systems. So we will skip that here. It suffices to know that the memory layout/map of a process is different on different operating systems and also depends on the type of CPU. For 64-bit linux, [x86_64](https://www.kernel.org/doc/Documentation/x86/x86_64/mm.txt) and [arm64](https://www.kernel.org/doc/Documentation/arm64/memory.txt) platforms, it can be quite different. Here we will focus primarily on how modern CPU work with caches and how that affects the system performance.
 
