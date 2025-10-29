@@ -2,11 +2,11 @@
 
 Almost all modern systems use Memory Hierarchies. Understanding how that works and programming accordingly has a profound impact on performance of your application and how you choose, design, and tune your data structures.
 
-Most basic Operating System courses teach how Virtual Memory is used by modern operating systems. So we will skip that here. It suffices to know that the memory layout/map of a process is different on different operating systems and also depends on the type of CPU. For 64-bit linux, [x86_64](https://www.kernel.org/doc/Documentation/x86/x86_64/mm.txt) and [arm64](https://www.kernel.org/doc/Documentation/arm64/memory.txt) platforms, it can be quite different. Here we will focus primarily on how modern CPU work with caches and how that affects the system performance.
+Most basic Operating System courses teach how Virtual Memory is used by modern operating systems. So we will skip that here. It suffices to know that the memory layout/map of a process is different on different operating systems and also depends on the type of CPU. For 64-bit linux, [x86_64](https://www.kernel.org/doc/Documentation/x86/x86_64/mm.txt) and [arm64](https://www.kernel.org/doc/Documentation/arm64/memory.txt) platforms, it can be quite different. Here we will focus primarily on how modern CPUs work with caches and how that affects the system performance.
 
 ## CPU and Memory
 
-Caching works on the principle of temporal and spatial locality of reference. Caches are typically organized as hierarchies. Lower levels are closer to the CPU. They are smaller - but much faster and more expensive. Typical caching model and sizes are shown below
+Typical hierachical memory structure with caching model and sizes is shown below. Caching works on the principle of temporal and spatial locality of reference. They are typically organized as hierarchies. Lower the level, faster they are and closer they are to the CPU. Lower level caches are smaller and more expensive. e.g. L1 caches are more expensive than L2 caches.
 
 ```mermaid
 graph TB
