@@ -6,7 +6,7 @@ Most basic Operating System courses teach how Virtual Memory is used by modern o
 
 ## CPU and Memory
 
-Typical hierachical memory structure with caching model and sizes is shown below. Caching works on the principle of temporal and spatial locality of reference. They are typically organized as hierarchies. Lower the level, faster they are and closer they are to the CPU. Lower level caches are smaller and more expensive. e.g. L1 caches are more expensive than L2 caches.
+Typical hierachical memory structure with caching model and sizes is shown below. Caching works on the principle of temporal and spatial locality of reference. Lower the level, faster the access and closeness to the CPU. Lower level caches are smaller and more expensive. e.g. L1 caches are more expensive than L2 caches.
 
 ```mermaid
 graph TB
