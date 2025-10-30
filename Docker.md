@@ -113,6 +113,15 @@ my-apache-server
 $ docker ps -a
 CONTAINER ID   IMAGE                       COMMAND                  CREATED       STATUS                 PORTS           NAMES
 ```
+
+## CICD flow
+
+Following diagram depicts typical CICD flow using the docker image 
+
+<div align="center">
+  <img src="images/cicd.png" alt="cicd" width="400">
+</div>
+
 ## For more information
 1. [docker CLI reference](https://docs.docker.com/reference/cli/docker/)
 2. [docker manuals](https://docs.docker.com/manuals/)
