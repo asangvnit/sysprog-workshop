@@ -69,7 +69,7 @@ $ docker ps -a
 CONTAINER ID   IMAGE         COMMAND               CREATED         STATUS                 PORTS                                        NAMES
 cbd21c8d860b   my-apache2    "httpd-foreground"    2 minutes ago   Up 2 minutes           0.0.0.0:8080->80/tcp, [::]:8080->80/tcp      my-apache-server
 ```
-You can refer to the container by name or ID. Notice that container ID in above command is truncated. To see the full ID, you can run `dockr ps --no-trunc`. You can stop or delete the container. A stopped container can be restarted by specifying its name or ID using `docker start` command.
+You can refer to the container by name or ID. Notice that container ID in above command is truncated. To see the full ID, you can run `docker ps --no-trunc`. You can stop or delete the container. A stopped container can be restarted by specifying its name or ID using `docker start` command.
 
 ### Lets test if the web server is running
 ```sh
