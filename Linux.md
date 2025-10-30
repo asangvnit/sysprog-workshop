@@ -1,12 +1,12 @@
-# Introduction to linux
+# Introduction to Linux
 
-## Why study linux?
+## Why study Linux?
 
-It is the most widely used **NIX based operating system in the world today. Has many variants and forks - but `debian`, `ubuntu` and `fedora` are some of the most widely used ones. There is hardly a place that you will work at that does not use linux somewhere. It is important that you know bit more than the bare minimum. So lets dive in.
+It is the most widely used \*NIX based operating system in the world today. Has many variants and forks - but `debian`, `ubuntu` and `fedora` are some of the most widely used ones. There is hardly a place that you will work at that does not use Linux somewhere. It is important that you know bit more than the bare minimum. So lets dive in.
 
 ## Getting started
 
-You can install linux on your laptop/desktop directly. Alternatively, you can use `multipass` to install it inside a `virtual machine` as per the detailed instructions in [Setup](Setup.md). Please follow those instructions (if you haven't done so already and then come back here).
+You can install Linux on your laptop/desktop directly. Alternatively, you can use `multipass` to install it inside a `virtual machine` as per the detailed instructions in [Setup](Setup.md). Please follow those instructions (if you haven't done so already and then come back here).
 
 Now we are ready to connect to the multipass ubuntu instance `sysprog` we had created earlier (Those running on Windows can omit `sudo` on Window cmd prompt).
 
@@ -329,12 +329,10 @@ First line has `x` bit set. So it maps to the `text` (or code) segment of
 `.bss` (global uninitialized variables) and `.data` (global initialized
 variables) sections of the executable.
 
-You can find more information at [proc
-filesystem](https://www.kernel.org/doc/html/latest/filesystems/proc.html). Few
-interesting things to explore on your own are `[heap]`, `[stack`], `[vdso]`,
-`[vvar]`. You can explore these on your own! (When you do lab!)
+You can find more information at [proc filesystem](https://www.kernel.org/doc/html/latest/filesystems/proc.html). Few interesting things to explore on your own are `[heap]`, `[stack`], `[vdso]`, `[vvar]`. You can explore these on your own! (When you do lab!)
 
 ## References
+
 1. [Executable and Linkable Format (ELF)](https://refspecs.linuxbase.org/elf/elfspec.pdf)
 2. [System V Application Binary Interface (ABI)](https://refspecs.linuxbase.org/elf/x86_64-SysV-psABI.pdf)
 3. [Linux /proc filesystem](https://github.com/torvalds/linux/tree/master/fs/proc)
