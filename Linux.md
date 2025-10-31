@@ -1,5 +1,3 @@
-[TOC]
-
 # Introduction to Linux
 
 ## Why study Linux?
