@@ -1,3 +1,5 @@
+[TOC]
+
 # Introduction to Linux
 
 ## Why study Linux?
@@ -330,6 +332,14 @@ First line has `x` bit set. So it maps to the `text` (or code) segment of
 variables) sections of the executable.
 
 You can find more information at [proc filesystem](https://www.kernel.org/doc/html/latest/filesystems/proc.html). Few interesting things to explore on your own are `[heap]`, `[stack`], `[vdso]`, `[vvar]`. You can explore these on your own! (When you do lab!)
+
+## Development tools that you should know about
+
+- Compiler - which compiler, what standards, what flags
+- Linker - You should know how dyamic libraries work and how external symbols are resolved
+- Editor - VS Code, Emacs, Vim, NeoVim
+- Debugger - gdb
+- Don't take performance of any of the standard library (C/C++) for granted
 
 ## References
 
