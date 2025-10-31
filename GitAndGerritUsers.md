@@ -3,9 +3,10 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Getting ready to use the git & gerrit workflow](#getting-ready-to-use-the-git--gerrit-workflow)
+  - [Working collaboratively in a controlled environment](#working-collaboratively-in-a-controlled-environment)
   - [Git Configuration](#git-configuration)
   - [Generate SSH key for yourself](#generate-ssh-key-for-yourself)
-  - [Add the generated SSH key to the your account for gerrit](#add-the-generated-ssh-key-to-the-your-account-for-gerrit)
+  - [Add the generated SSH key to your account for gerrit](#add-the-generated-ssh-key-to-your-account-for-gerrit)
   - [Cloning a repository](#cloning-a-repository)
   - [Making the changes and commiting the code](#making-the-changes-and-commiting-the-code)
   - [Push the changes](#push-the-changes)
