@@ -1,21 +1,5 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Getting ready to use the git & gerrit workflow](#getting-ready-to-use-the-git--gerrit-workflow)
-  - [Working collaboratively in a controlled environment](#working-collaboratively-in-a-controlled-environment)
-  - [Git Configuration](#git-configuration)
-  - [Generate SSH key for yourself](#generate-ssh-key-for-yourself)
-  - [Add the generated SSH key to your account for gerrit](#add-the-generated-ssh-key-to-your-account-for-gerrit)
-  - [Cloning a repository](#cloning-a-repository)
-  - [Making the changes and commiting the code](#making-the-changes-and-commiting-the-code)
-  - [Push the changes](#push-the-changes)
-  - [Code Review](#code-review)
-    - [Responding to comments](#responding-to-comments)
-  - [References](#references)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
+<!-- START doctoc -->
+<!-- END doctoc -->
 # Getting ready to use the git & gerrit workflow
 
 ## Working collaboratively in a controlled environment
@@ -93,7 +77,7 @@ Open following url in web browser, [http://server-ip:8080/login](http://server-i
 
 Once the administrator has created a project for you, you can [clone it](http://server-ip:8080/admin/repos/myproject,general) it. Make sure you copy the entire `SSH` command next to `Clone with commit-hook` as shown in the image below:
 
-<img src="images/gerrit-clone-cmd.png" alt="gerrit clone command" />
+![gerrit clone command](images/gerrit-clone-cmd.png")
 
 ```sh
 coder@3929e2690e0e:~$ git clone "ssh://asang@server-ip:29418/myproject" && (cd "myproject" && mkdir -p `git rev-parse --git-dir`/hooks/ && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://server-ip:8080/tools/hooks/commit-msg && chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
@@ -215,11 +199,12 @@ To ssh://192.168.88.5:29418/myproject
 
 The review page appears as follows:
 
-<img src="images/gerrit-review-page.png" alt="gerrit review page" />
+![gerrit review page](images/gerrit-review-page.png)
 
 Then reviewer adds comments and replies:
 
-<img src="images/gerrit-review-page-with-comments.png" alt="gerrit review comments" />
+![gerrit review comments](images/gerrit-review-page-with-comments.png)
+
 
 ### Responding to comments
 
@@ -229,7 +214,7 @@ Remaining steps must be done in the browser by [marking the comments as Done](im
 
 Reviewer sees that all comments are resolved and [replies with +2](images/gerrit-reviewer-ok-to-submit.png).
 
-Submitter refreshes his view and [sees](submitter-ready-to-submit.png) that the status has changed from `Active` to `Ready to submit` and `Submit requirements` are green.
+Submitter refreshes his view and [sees](images/submitter-ready-to-submit.png) that the status has changed from `Active` to `Ready to submit` and `Submit requirements` are green.
 
 Administrator decides that he is statisfied and clicks `Submit` button to [merge the changes](images/administrator-merges-changes.png) to the `master` branch. After this status of the review changes to `Merged`. Now everyone can *see* the changes when the pull the latest version from the server.
 
