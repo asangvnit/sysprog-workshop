@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Understanding git basics](#understanding-git-basics)
+  - [What is git and why is it required?](#what-is-git-and-why-is-it-required)
+  - [How do you get started](#how-do-you-get-started)
+    - [Step 1 - Basic configuration](#step-1---basic-configuration)
+    - [Step 2 - Setting up the repository](#step-2---setting-up-the-repository)
+    - [Step 3 - Cloning the repository and working with it](#step-3---cloning-the-repository-and-working-with-it)
+    - [Step 4 - Collaborating with others - conflicts and rebasing](#step-4---collaborating-with-others---conflicts-and-rebasing)
+  - [Important Git Commands](#important-git-commands)
+  - [Branching and Merging](#branching-and-merging)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Understanding git basics
 
 ## What is git and why is it required?

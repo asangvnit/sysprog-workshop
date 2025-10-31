@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Instructions for setting up gerrit server/container](#instructions-for-setting-up-gerrit-servercontainer)
+  - [Install docker on your system](#install-docker-on-your-system)
+  - [Create gerrit container from CLI](#create-gerrit-container-from-cli)
+  - [Generate SSH key for the admin account](#generate-ssh-key-for-the-admin-account)
+  - [Add the generated SSH key to the Admin account for gerrit](#add-the-generated-ssh-key-to-the-admin-account-for-gerrit)
+  - [Miscellaneous](#miscellaneous)
+  - [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Instructions for setting up gerrit server/container
 
 ## Install docker on your system

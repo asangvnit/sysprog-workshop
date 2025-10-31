@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Your assignments](#your-assignments)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Your assignments
 
 You can form groups of 2-3 and split the work amongst yourself. Tell me the name of your project and I will create a project for you on my gerrit server. Instead, you can also choose to publish your work on [github](https://github.com/). If you decide to use github, you MUST use the [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) based workflow to integrate your changes.

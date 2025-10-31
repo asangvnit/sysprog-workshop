@@ -1,5 +1,19 @@
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+# Introduction to Linux
+
+- [Introduction to Linux](#introduction-to-linux)
+  - [Why study Linux?](#why-study-linux)
+  - [Getting started](#getting-started)
+  - [List of processes](#list-of-processes)
+  - [Linux top command](#linux-top-command)
+    - [Resource information with top](#resource-information-with-top)
+  - [Process Memory Map (Virtual Memory Layout)](#process-memory-map-virtual-memory-layout)
+    - [First three lines](#first-three-lines)
+  - [Development tools that you should know about](#development-tools-that-you-should-know-about)
+  - [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 # Introduction to Linux
 
 ## Why study Linux?

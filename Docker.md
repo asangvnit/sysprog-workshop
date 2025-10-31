@@ -1,3 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Introduction to docker](#introduction-to-docker)
+  - [Docker Architecture](#docker-architecture)
+  - [Getting Started](#getting-started)
+  - [Building your first docker image and a container](#building-your-first-docker-image-and-a-container)
+    - [Create an empty index.html file for the apache webserver](#create-an-empty-indexhtml-file-for-the-apache-webserver)
+    - [Create a Dockerfile for your container](#create-a-dockerfile-for-your-container)
+    - [Build the image and start the container](#build-the-image-and-start-the-container)
+    - [Lets test if the web server is running](#lets-test-if-the-web-server-is-running)
+    - [Stopping & removing the container](#stopping--removing-the-container)
+  - [CICD flow](#cicd-flow)
+  - [For more information](#for-more-information)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Introduction to docker
 - Haven't heard of [docker](https://docker.com/)? Were you sleeping under a rock?
 - Official definition is not very useful

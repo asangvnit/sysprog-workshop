@@ -1,3 +1,20 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Getting ready to use the git & gerrit workflow](#getting-ready-to-use-the-git--gerrit-workflow)
+  - [Git Configuration](#git-configuration)
+  - [Generate SSH key for yourself](#generate-ssh-key-for-yourself)
+  - [Add the generated SSH key to the Admin account for gerrit](#add-the-generated-ssh-key-to-the-admin-account-for-gerrit)
+  - [Cloning a repository](#cloning-a-repository)
+  - [Making the changes and commiting the code](#making-the-changes-and-commiting-the-code)
+  - [Push the changes](#push-the-changes)
+  - [Code Review](#code-review)
+    - [Responding to comments](#responding-to-comments)
+  - [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Getting ready to use the git & gerrit workflow
 
 You should connect to Gerrit from your `code-server` [container](Setup.md#installing-code-server-docker-container). In order to generate a SSH keypair, run the following command:

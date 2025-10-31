@@ -1,5 +1,13 @@
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+# Agenda
+
+- [Agenda](#agenda)
+  - [Order of Presentations](#order-of-presentations)
+  - [Lab Assignments](#lab-assignments)
+  - [Tracking Document](#tracking-document)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 # Agenda
 
 Systems Programming Workshop @Palloti College on 1st Nov 2025
