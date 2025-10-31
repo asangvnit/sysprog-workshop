@@ -17,7 +17,18 @@
 
 # Getting ready to use the git & gerrit workflow
 
-You should connect to Gerrit from your `code-server` [container](Setup.md#installing-code-server-docker-container). In order to generate a SSH keypair, run the following command:
+## Working collaboratively in a controlled environment
+
+Just because you understand `git` and have a repository, doesn't mean that you can work effectively in a corporate development environment. You need many more tools. Some of these are:
+
+- Code Review
+- Issue (Bug) tracking
+- Project management
+- Release management
+
+There are many commercial and open source options for this. I have chosen to use [Gerrit Code Review](https://www.gerritcodereview.com/). It has integrated `git` rrepository management support and is widely used. Google created it and Open Sourced it. It also supports wide variety of plugins. We use it extensively in the company that I work for. Lets see how to put it to use.
+
+You should connect to Gerrit from inside your `code-server` [container](Setup.md#installing-code-server-docker-container) as all the programming tools are installed there. First step is to order to generate a SSH keypair, run the following command:
  
 ```sh
 $ docker exec -it code-server /bin/bash
@@ -73,7 +84,7 @@ coder@3929e2690e0e:~$ cat ~/.ssh/id_ed25519.pub
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINOFMhddYcrRQEBd9QK1YYMszq6ZDmju1+CKJRBcEjFi coder@3929e2690e0e
 ```
 
-## Add the generated SSH key to the your account for gerrit
+## Add the generated SSH key to your account for gerrit
 
 Open following url in web browser, [http://server-ip:8080/login](http://server-ip:8080/login) as *yourself*. Go to Settings and under `New SSH key` text box, paste the line printed above (public key).  Now click "Add New SSH Key" button to save it. You are now ready to use gerrit via ssh. Just make sure that you have configured your `user.name` and `user.email` settings for `git`. Remember that your email addresss in the account on `gerrit` server must match the one specified in your git configuration. For more details, see [Gerrit Walkthroughts](https://gerrit-review.googlesource.com/Documentation/intro-gerrit-walkthrough.html).
 
