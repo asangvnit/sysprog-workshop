@@ -1,3 +1,5 @@
+<!-- START doctoc -->
+<!-- END doctoc -->
 # Introduction to Linux
 
 ## Why study Linux?

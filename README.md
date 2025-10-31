@@ -1,3 +1,5 @@
+<!-- START doctoc -->
+<!-- END doctoc -->
 # Agenda
 
 Systems Programming Workshop @Palloti College on 1st Nov 2025
