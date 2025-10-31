@@ -92,7 +92,7 @@ Open following url in web browser, [http://server-ip:8080/login](http://server-i
 
 Once the administrator has created a project for you, you can [clone it](http://server-ip:8080/admin/repos/myproject,general) it. Make sure you copy the entire `SSH` command next to `Clone with commit-hook` as shown in the image below:
 
-![gerrit clone command](images/gerrit-clone-cmd.png")
+![gerrit clone command](images/gerrit-clone-cmd.png)
 
 ```sh
 coder@3929e2690e0e:~$ git clone "ssh://asang@server-ip:29418/myproject" && (cd "myproject" && mkdir -p `git rev-parse --git-dir`/hooks/ && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://server-ip:8080/tools/hooks/commit-msg && chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
@@ -229,9 +229,17 @@ Remaining steps must be done in the browser by [marking the comments as Done](im
 
 Reviewer sees that all comments are resolved and [replies with +2](images/gerrit-reviewer-ok-to-submit.png).
 
-Submitter refreshes his view and [sees](images/submitter-ready-to-submit.png) that the status has changed from `Active` to `Ready to submit` and `Submit requirements` are green.
+Submitter refreshes his view and sees
 
-Administrator decides that he is statisfied and clicks `Submit` button to [merge the changes](images/administrator-merges-changes.png) to the `master` branch. After this status of the review changes to `Merged`. Now everyone can *see* the changes when the pull the latest version from the server.
+![submitter ready to submit](images/submitter-ready-to-submit.png)
+
+that the status has changed from `Active` to `Ready to submit` and `Submit requirements` are green.
+
+Administrator decides that he is statisfied and clicks `Submit` button to merge the changes
+
+![merge the changes](images/administrator-merges-changes.png)
+
+to the `master` branch. After this status of the review changes to `Merged`. Now everyone can *see* the changes when the pull the latest version from the server.
 
 ## References
 
