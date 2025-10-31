@@ -73,13 +73,13 @@ coder@3929e2690e0e:~$ cat ~/.ssh/id_ed25519.pub
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINOFMhddYcrRQEBd9QK1YYMszq6ZDmju1+CKJRBcEjFi coder@3929e2690e0e
 ```
 
-## Add the generated SSH key to the Admin account for gerrit
+## Add the generated SSH key to the your account for gerrit
 
-Open following url in web browser, [http://server-ip:8080/login](http://server-ip:8080/login) as *yourself*, go to the settings and in `New SSH key` text box paste the line printed above (public key).  in New SSH Key section and click "Add New SSH Key" button to save it. You are now ready to use gerrit. Just make sure that you have configured your `user.name` and `user.email` settings for `git`. For more details, see [Gerrit Walkthroughts](https://gerrit-review.googlesource.com/Documentation/intro-gerrit-walkthrough.html).
+Open following url in web browser, [http://server-ip:8080/login](http://server-ip:8080/login) as *yourself*. Go to Settings and under `New SSH key` text box, paste the line printed above (public key).  Now click "Add New SSH Key" button to save it. You are now ready to use gerrit via ssh. Just make sure that you have configured your `user.name` and `user.email` settings for `git`. Remember that your email addresss in the account on `gerrit` server must match the one specified in your git configuration. For more details, see [Gerrit Walkthroughts](https://gerrit-review.googlesource.com/Documentation/intro-gerrit-walkthrough.html).
 
 ## Cloning a repository
 
-Once the administrator has created a project for you, you can [clone it](http://server-ip:8080/admin/repos/myproject,general) it. Make sure you copy the `SSH` command next to `Clone with commit-hook` as shown in the image below:
+Once the administrator has created a project for you, you can [clone it](http://server-ip:8080/admin/repos/myproject,general) it. Make sure you copy the entire `SSH` command next to `Clone with commit-hook` as shown in the image below:
 
 <img src="images/gerrit-clone-cmd.png" alt="gerrit clone command" />
 
