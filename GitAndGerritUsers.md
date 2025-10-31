@@ -5,7 +5,7 @@
 - [Getting ready to use the git & gerrit workflow](#getting-ready-to-use-the-git--gerrit-workflow)
   - [Git Configuration](#git-configuration)
   - [Generate SSH key for yourself](#generate-ssh-key-for-yourself)
-  - [Add the generated SSH key to the Admin account for gerrit](#add-the-generated-ssh-key-to-the-admin-account-for-gerrit)
+  - [Add the generated SSH key to the your account for gerrit](#add-the-generated-ssh-key-to-the-your-account-for-gerrit)
   - [Cloning a repository](#cloning-a-repository)
   - [Making the changes and commiting the code](#making-the-changes-and-commiting-the-code)
   - [Push the changes](#push-the-changes)
