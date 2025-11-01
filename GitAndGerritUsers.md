@@ -29,7 +29,7 @@ There are many commercial and open source options for this. I have chosen to use
 
 If you are using your own `Gerrit Server`, follow [these instructions](gerrit-setup/gerrit_instructions.md).
 
-You should connect to Gerrit from inside your `code-server` [container](Setup.md#installing-code-server-docker-container) as all the programming tools are installed there. First step is to order to generate a SSH keypair. These are required to clone the git repositories hosted by Gerrit Code Review via `ssh` command. To generate the keys, run the following command:
+You should connect to Gerrit from inside your `code-server` [container](Setup.md#installing-code-server-docker-container) as all the programming tools are installed there. First step is to order to generate a SSH keypair. SSH key is required to clone the git repositories hosted by Gerrit Code Review via `ssh` command. To enter the code-server container shell, execute following command:
  
 ```sh
 $ docker exec -it code-server /bin/bash
