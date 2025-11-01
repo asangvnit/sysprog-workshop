@@ -22,7 +22,7 @@ The suggested order of reading for self study is given below. Most of the presen
 4. [Memory Management](Memory.md)
 5. [Git Basics](GitBasics.md)
 5. [Gerrit Code Review](GitAndGerritUsers.md)
-5. [Working with cmake](cmakedemo/README.md)
+5. [Working with cmake](cmake-demo/README.md)
 6. [Analyzing Performance](perf-demo/README.md)
 7. [Leak detection and Other tools](valgrind-demo/README.md)
 
