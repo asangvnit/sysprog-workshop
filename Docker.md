@@ -141,6 +141,17 @@ Following diagram depicts typical CICD flow using the docker image
   <img src="images/cicd.png" alt="cicd" width="400">
 </div>
 
+## We are already using the CICD workflow for this repository
+
+Didn't realize that, right? Just look at the [Actions](https://github.com/asangvnit/sysprog-workshop/actions) tab. There are two `workflows` that we have created.
+
+1. [CMake Workflow](https://github.com/asangvnit/sysprog-workshop/actions/workflows/cmake-multi-platform.yml) which ensures that any time we push the code changes to github, it automatically builds [cmake-demo/progwithtest](cmake-demo/progwithtest) program and run the tests
+2. [Update Markdown TOC](https://github.com/asangvnit/sysprog-workshop/actions/workflows/update-toc.yml) which autoamatically updated the *Table of Contents* for each markdown file using (doctoc](https://github.com/thlorenz/doctoc) in the repository after every update, regerates and commits the changes to MarkDown files if needed. This eliminates the need for doing repetitive and error prone work.
+
+Both these activities are orchestrated by github to creating Docker containers. There are other workflow orchestration tools like [Jenkins](https://www.jenkins.io/) which can be self hosted and customized. Notice that many of these tools use [YAML](https://yaml.org/) for specifying the steps
+
 ## For more information
 1. [docker CLI reference](https://docs.docker.com/reference/cli/docker/)
 2. [docker manuals](https://docs.docker.com/manuals/)
+3. [YAML](https://yaml.org/)
+4. [Jenkins](https://www.jenkins.io/)
