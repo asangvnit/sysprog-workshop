@@ -26,7 +26,9 @@ Just because you understand `git` and have a repository, doesn't mean that you c
 - Project management
 - Release management
 
-There are many commercial and open source options for this. I have chosen to use [Gerrit Code Review](https://www.gerritcodereview.com/). It has integrated `git` rrepository management support and is widely used. Google created it and Open Sourced it. It also supports wide variety of plugins. We use it extensively in the company that I work for. Lets see how to put it to use.
+There are many commercial and open source options for this. I have chosen to use [Gerrit Code Review](https://www.gerritcodereview.com/). It has integrated `git` repository management support and is widely used. Google created and subsequently, Open Sourced it. It also supports wide variety of plugins. We use it extensively in the company that I work for. Lets see how to put it to use.
+
+If you are using your own `Gerrit Server`, follow [these instructions](gerrit-setup/gerrit_instructions.md).
 
 You should connect to Gerrit from inside your `code-server` [container](Setup.md#installing-code-server-docker-container) as all the programming tools are installed there. First step is to order to generate a SSH keypair, run the following command:
  

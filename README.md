@@ -10,9 +10,11 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 # Agenda
 
-Systems Programming Workshop @Palloti College on 1st Nov 2025
+Systems Programming Workshop @Palloti College on 1st Nov 2025.
 
 ## Order of Presentations
+
+The suggested order of reading for self study is given below. Most of the presentations cite primary references at the bottom. Readers are advised to consult those when in doubt.
 
 1. [Installing Prerequisites](Setup.md)
 2. [Linux Fundamentals](Linux.md)
