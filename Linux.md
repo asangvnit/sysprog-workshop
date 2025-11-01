@@ -20,10 +20,11 @@
 
 It is the most widely used \*NIX based operating system in the world today. Has many variants and forks - but `debian`, `ubuntu` and `fedora` are some of the most widely used ones. There is hardly a place that you will work at that does not use Linux somewhere. It is important that you know bit more than the bare minimum. Linux kernel gives all application developers some key abstractions:
 
+- Privilege Separation - Separation between user-mode and kernel-mode.
 - Process Boundary - No two processes can interfere with each other and execute completely oblivious to context switching that happens under the hood. By default, each process has a single thread and that is the basic unit of execution
 - Memory Protection - No process can trash the memory of another process or kernel/system memory
 - Memory Management - Every process gets an illution of logically contiguous, nearly unlimited memory irrespective of *physical memory* present in the system. The key idea here is paging based on LRU (Least Recently Used) policy
-- [Fair CPU Scheduling](https://www.kernel.org/doc/html/latest/scheduler/sched-design-CFS.html) - Linux schedules `tasks` (aka `threads`) within various process in a fair manner while honoring their priorities, while preventing starvation. Designing a good, low overhead scheduler is *very* hard!
+- [Fair CPU Scheduling](https://www.kernel.org/doc/html/latest/scheduler/sched-design-CFS.html) - Linux schedules `tasks` (aka `threads`) within various processes in a fair manner while honoring their priorities, while preventing starvation. Designing a good, low overhead scheduler is *very* hard!
 
 ## Getting started
 
@@ -365,3 +366,4 @@ You can find more information at [proc filesystem](https://www.kernel.org/doc/ht
 1. [Executable and Linkable Format (ELF)](https://refspecs.linuxbase.org/elf/elfspec.pdf)
 2. [System V Application Binary Interface (ABI)](https://refspecs.linuxbase.org/elf/x86_64-SysV-psABI.pdf)
 3. [Linux /proc filesystem](https://github.com/torvalds/linux/tree/master/fs/proc)
+4. [Overview of CPU scheduling](https://www.man7.org/linux/man-pages/man7/sched.7.html)
