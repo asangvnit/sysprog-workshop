@@ -30,48 +30,43 @@ There are many commercial and open source options for this. I have chosen to use
 
 If you are using your own `Gerrit Server`, follow [these instructions](gerrit-setup/gerrit_instructions.md).
 
-You should connect to Gerrit from inside your `code-server` [container](Setup.md#installing-code-server-docker-container) as all the programming tools are installed there. First step is to order to generate a SSH keypair, run the following command:
+You should connect to Gerrit from inside your `code-server` [container](Setup.md#installing-code-server-docker-container) as all the programming tools are installed there. First step is to order to generate a SSH keypair. These are required to clone the git repositories hosted by Gerrit Code Review via `ssh` command. To generate the keys, run the following command:
  
 ```sh
 $ docker exec -it code-server /bin/bash
 coder@3929e2690e0e:~
 ```
 
-## Git Configuration
-Make sure you have done this (replace My Name with your name and email address with the one you used to register with the gerrit server):
-```sh
-coder@3929e2690e0e:~ git config --global user.name "My name"
-coder@3929e2690e0e:~ git config --global user.email myname@example.com
-```
-
 ## Generate SSH key for yourself
 
-In order to generate a SSH keypair, run the following command:
+Once you are inside the code-server container, run the following command to generate a SSH public-private keypair, run the following command:
  
 ```sh
-coder@3929e2690e0e:~$ ssh-keygen -t ed25519
+coder@3929e2690e0e:~$ ssh-keygen -f ~/.ssh/id_ed25519 -t ed25519 -N ""
 Generating public/private ed25519 key pair.
-Enter file in which to save the key (/home/coder/.ssh/id_ed25519):
 Created directory '/home/coder/.ssh'.
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
 Your identification has been saved in /home/coder/.ssh/id_ed25519
 Your public key has been saved in /home/coder/.ssh/id_ed25519.pub
 The key fingerprint is:
-SHA256:0vVxDOdWKuAHC1rdY11f8xxtD8XOa38PW60IyQBJIAg coder@3929e2690e0e
+SHA256:fy3o9/46G0gBJb8CxC6T7aCm2cSKF36Xsafbg2wTNYc asangdani@8d51b53d46e7
 The key's randomart image is:
 +--[ED25519 256]--+
-|E.. ... o.o....**|
-|.  . . + o.++=o+X|
-|      +   +.+.*==|
-|       o . o =  +|
-|      . S   .   .|
-|       . o .   o.|
-|          +   o +|
-|           . . =o|
-|            . o +|
+|       .. o..    |
+|       ..  +     |
+|       +..  o    |
+|      = E..  o   |
+|   . . *So. o    |
+|  . = o .. + o   |
+| o O . *  o + o  |
+|. * o O.o. ..... |
+| . . oo=.... o==.|
 +----[SHA256]-----+
-coder@3929e2690e0e:~$ ls -la .ssh
+```
+
+In your `~/.ssh` directory, following two files will be created
+
+```
+coder@3929e2690e0e:~$ ls -la ~/.ssh
 total 16
 drwx------ 2 coder coder 4096 Oct 25 10:27 .
 drwx------ 1 coder coder 4096 Oct 25 10:27 ..
@@ -79,12 +74,14 @@ drwx------ 1 coder coder 4096 Oct 25 10:27 ..
 -rw-r--r-- 1 coder coder  100 Oct 25 10:27 id_ed25519.pub
 ```
 
-Generated ed25519 public/private keypair
+You need to copy the public key to your Gerrit Account. So first display its contents
 
 ```sh
 coder@3929e2690e0e:~$ cat ~/.ssh/id_ed25519.pub
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINOFMhddYcrRQEBd9QK1YYMszq6ZDmju1+CKJRBcEjFi coder@3929e2690e0e
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC17YXcm9X3FSkvepinKFWrYbOsTzD2WMUYWPrZqj7kA asangdani@8d51b53d46e7
 ```
+
+Please note that you need to copy what appears on *your* terminal and not the key that appears in this document. The one appearing here is just for illustration purposes.
 
 ## Add the generated SSH key to your account for gerrit
 
