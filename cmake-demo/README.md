@@ -3,17 +3,17 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [What is cmake and why use it?](#what-is-cmake-and-why-use-it)
-  - [Installing cmake](#installing-cmake)
-    - [Debian/Ubuntu Linux](#debianubuntu-linux)
-    - [MacOS](#macos)
-  - [How to use cmake?](#how-to-use-cmake)
-  - [More advanced example](#more-advanced-example)
-    - [helloprint.h](#helloprinth)
-    - [helloprint.cpp](#helloprintcpp)
-    - [cpphello.cpp](#cpphellocpp)
-    - [CMakeLists.txt](#cmakeliststxt)
-  - [Automated testing with googletest](#automated-testing-with-googletest)
-    - [hello_test.cpp](#hello_testcpp)
+- [Installing cmake](#installing-cmake)
+  - [Debian/Ubuntu Linux](#debianubuntu-linux)
+  - [MacOS](#macos)
+- [How to use cmake?](#how-to-use-cmake)
+- [More advanced example](#more-advanced-example)
+  - [helloprint.h](#helloprinth)
+  - [helloprint.cpp](#helloprintcpp)
+  - [cpphello.cpp](#cpphellocpp)
+  - [CMakeLists.txt](#cmakeliststxt)
+- [Automated testing with googletest](#automated-testing-with-googletest)
+  - [hello_test.cpp](#hello_testcpp)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
