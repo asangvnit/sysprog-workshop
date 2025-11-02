@@ -17,7 +17,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# What is cmake and why use it?
+## What is cmake and why use it?
 
 [CMake](https://cmake.org/) is a an extremely popular way for building C++ software. Large software systems need efficient (incremental and customizable) build systems and automated way to test the changes. `cmake` makes it possible to scale a build system and is easy to use. It is powerful and comprehensive solution for managing the software build process. There are many other alternatives like [GNU Makefiles](https://www.gnu.org/software/make/manual/make.html), [Visual Studio](https://code.visualstudio.com/docs/csharp/build-tools) legacy build system etc. and many other proprietary ones. But `cmake` shines as it is easy to learn, cross-platform and highly customizable.
 
