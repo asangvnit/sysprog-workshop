@@ -3,15 +3,15 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [What Every Programmer Should Know..](#what-every-programmer-should-know)
-  - [CPU and Memory](#cpu-and-memory)
-  - [L1 Cache](#l1-cache)
-  - [Cost of Memory Access](#cost-of-memory-access)
-  - [Appendix: Aliasing and Types of Caches](#appendix-aliasing-and-types-of-caches)
-    - [Direct Mapped](#direct-mapped)
-    - [Fully Associative](#fully-associative)
-    - [Set Associative](#set-associative)
-  - [Appendix: Cache Design for Multi-Core CPUs](#appendix-cache-design-for-multi-core-cpus)
-  - [References](#references)
+- [CPU and Memory](#cpu-and-memory)
+- [L1 Cache](#l1-cache)
+- [Cost of Memory Access](#cost-of-memory-access)
+- [Appendix: Aliasing and Types of Caches](#appendix-aliasing-and-types-of-caches)
+  - [Direct Mapped](#direct-mapped)
+  - [Fully Associative](#fully-associative)
+  - [Set Associative](#set-associative)
+- [Appendix: Cache Design for Multi-Core CPUs](#appendix-cache-design-for-multi-core-cpus)
+- [References](#references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

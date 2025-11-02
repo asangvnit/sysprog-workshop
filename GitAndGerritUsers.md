@@ -2,16 +2,15 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 # Getting ready to use the git & gerrit workflow
 
-- [Getting ready to use the git & gerrit workflow](#getting-ready-to-use-the-git--gerrit-workflow)
-  - [Working collaboratively in a controlled environment](#working-collaboratively-in-a-controlled-environment)
-  - [Generate SSH key for yourself](#generate-ssh-key-for-yourself)
-  - [Add the generated SSH key to your account for gerrit](#add-the-generated-ssh-key-to-your-account-for-gerrit)
-  - [Cloning a repository](#cloning-a-repository)
-  - [Making the changes and commiting the code](#making-the-changes-and-commiting-the-code)
-  - [Push the changes](#push-the-changes)
-  - [Code Review](#code-review)
-    - [Responding to comments](#responding-to-comments)
-  - [References](#references)
+- [Working collaboratively in a controlled environment](#working-collaboratively-in-a-controlled-environment)
+- [Generate SSH key for yourself](#generate-ssh-key-for-yourself)
+- [Add the generated SSH key to your account for gerrit](#add-the-generated-ssh-key-to-your-account-for-gerrit)
+- [Cloning a repository](#cloning-a-repository)
+- [Making the changes and commiting the code](#making-the-changes-and-commiting-the-code)
+- [Push the changes](#push-the-changes)
+- [Code Review](#code-review)
+  - [Responding to comments](#responding-to-comments)
+- [References](#references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

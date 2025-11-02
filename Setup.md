@@ -3,16 +3,16 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Prerequisites for Systems Programming Workshop](#prerequisites-for-systems-programming-workshop)
-  - [What you should know?](#what-you-should-know)
-  - [System Requirements](#system-requirements)
-  - [Install docker](#install-docker)
-    - [Installing code-server container](#installing-code-server-container)
-      - [On Windows host](#on-windows-host)
-      - [On Linux/MacOS host](#on-linuxmacos-host)
-  - [Installing multipass](#installing-multipass)
-    - [Installing multipass on MacOS](#installing-multipass-on-macos)
-    - [Installing multipass on Windows](#installing-multipass-on-windows)
-  - [Installing prerequisites inside ubuntu instance](#installing-prerequisites-inside-ubuntu-instance)
+- [What you should know?](#what-you-should-know)
+- [System Requirements](#system-requirements)
+- [Install docker](#install-docker)
+  - [Installing code-server container](#installing-code-server-container)
+    - [On Windows host](#on-windows-host)
+    - [On Linux/MacOS host](#on-linuxmacos-host)
+- [Installing multipass](#installing-multipass)
+  - [Installing multipass on MacOS](#installing-multipass-on-macos)
+  - [Installing multipass on Windows](#installing-multipass-on-windows)
+- [Installing prerequisites inside ubuntu instance](#installing-prerequisites-inside-ubuntu-instance)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

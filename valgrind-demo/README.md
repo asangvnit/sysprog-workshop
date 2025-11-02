@@ -3,9 +3,9 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Leaks, locks and much more](#leaks-locks-and-much-more)
-  - [Simple example](#simple-example)
-  - [Cachegrind - cache and branch profiler](#cachegrind---cache-and-branch-profiler)
-  - [Other useful tools](#other-useful-tools)
+- [Simple example](#simple-example)
+- [Cachegrind - cache and branch profiler](#cachegrind---cache-and-branch-profiler)
+- [Other useful tools](#other-useful-tools)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

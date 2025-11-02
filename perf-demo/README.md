@@ -3,10 +3,10 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Introduction to CPU profiling](#introduction-to-cpu-profiling)
-  - [Flamegraphs with perf](#flamegraphs-with-perf)
-  - [Multi-threaded version of bottlenecks](#multi-threaded-version-of-bottlenecks)
-  - [Running perf tools on Windows/Mac](#running-perf-tools-on-windowsmac)
-  - [References](#references)
+- [Flamegraphs with perf](#flamegraphs-with-perf)
+- [Multi-threaded version of bottlenecks](#multi-threaded-version-of-bottlenecks)
+- [Running perf tools on Windows/Mac](#running-perf-tools-on-windowsmac)
+- [References](#references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
