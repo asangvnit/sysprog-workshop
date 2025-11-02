@@ -22,7 +22,12 @@ Most basic Operating System courses teach how Virtual Memory is employed by Oper
 
 ## CPU and Memory
 
-Typical hierachical memory structure with caching model and sizes is shown below. Caching works on the principle of temporal and spatial locality of reference. Lower the level, faster the access and closeness to the CPU. Lower level caches are smaller and more expensive. e.g. L1 caches are more expensive than L2 caches.
+Caching works on the principle of:
+
+1. **Temporal locality** - If we accessed some memory recently, then its likely that I will need to access it again in near future
+2. **Spatial locality** - If we accessed some area in memory, its quite likely that *adjacencent* memory locations would be needed again - think about fields in a `struct/class` in C/C++ or elements in an array.
+
+Another important thing to remember about memory hierarchy is *lower the level, faster the access and closeness to the CPU*. Lower level caches are smaller and more expensive. e.g. L1 caches are more expensive than L2 caches. Typical hierachical memory structure with cache sizes and model is shown below. 
 
 ```mermaid
 graph TB
