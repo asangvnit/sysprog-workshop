@@ -18,7 +18,59 @@
 
 Almost all modern systems use Memory Hierarchies. Understanding how interaction between CPU and memory hierarchy works and programming with `cache friendliness` in mind has a profound impact on performance of your application and how you choose, design, and tune your data structures.
 
-Most basic Operating System courses teach how Virtual Memory is employed by Operating Systems. So we will skip that description here. It suffices to know that the memory layout/map of a process is different on different operating systems and also depends on the type of CPU. For 64-bit linux, [x86_64](https://www.kernel.org/doc/Documentation/x86/x86_64/mm.txt) and [arm64](https://www.kernel.org/doc/Documentation/arm64/memory.txt) platforms, it can be quite different. Here we will focus primarily on how modern CPUs work with caches and how that affects the system performance.
+Most basic Operating System courses teach how Virtual Memory is employed by Operating Systems. So we will skip that description here. It suffices to know that the memory layout/map of a process is different on different operating systems and also depends on the type of CPU. For 64-bit linux, [x86_64](https://www.kernel.org/doc/Documentation/x86/x86_64/mm.txt) and [arm64](https://www.kernel.org/doc/Documentation/arm64/memory.txt) platforms, it can be quite different. Here we will focus primarily on how modern CPUs work with caches and how that affects the system performance. A typical process memory layout is as follows:
+```mermaid
+graph TD
+    subgraph User_Space["User Space"]
+        A[Process]
+        A1[Code - Text Segment]
+        A2[Data - Initialized Data]
+        A3[BSS - Uninitialized Data]
+        A4[Heap - malloc/new]
+        A5[Stack - Function Calls, Local Vars]
+        A6[Shared Libraries - libc, libm, etc.]
+    end
+
+    subgraph Kernel_Space["Kernel Space"]
+        K1[Task_struct #40;Process Control Block#41;]
+        K2[Kernel Stack #40;Per-Process Stack#41;]
+        K3[File Descriptors]
+        K4[Memory Mappings #40;VMAs#41;]
+        K5[Scheduler]
+        K6[System Calls Interface]
+    end
+
+    subgraph Hardware["CPU & Memory"]
+        H1[MMU #40;Memory Management Unit#41;]
+        H2[CPU Registers]
+        H3[Page Tables]
+    end
+
+    %% Relationships
+    A -->|exec#40;#41;, fork#40;#41;, clone#40;#41;| K1
+    A -->|syscalls #40;read, write, open, etc.#41;| K6
+    K6 --> K5
+    K1 --> K2
+    K1 --> K3
+    K1 --> K4
+    K4 --> H3
+    H3 --> H1
+    H1 --> H2
+
+    %% Additional concepts
+    A5 -->|function calls| A1
+    A4 -->|dynamic allocation| K4
+    A6 -->|loaded via ld.so| A
+
+    %% Styles
+    classDef user fill:#d0f0ff,stroke:#0077b6,stroke-width:1px;
+    classDef kernel fill:#ffd6a5,stroke:#e67e22,stroke-width:1px;
+    classDef hardware fill:#d3f8d3,stroke:#28a745,stroke-width:1px;
+
+    class A,A1,A2,A3,A4,A5,A6 user;
+    class K1,K2,K3,K4,K5,K6 kernel;
+    class H1,H2,H3 hardware;
+```
 
 ## CPU and Memory
 
