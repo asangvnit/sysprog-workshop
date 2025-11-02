@@ -26,6 +26,62 @@ It is the most widely used \*NIX based operating system in the world today. Has 
 - Memory Management - Every process gets an illution of logically contiguous, nearly unlimited memory irrespective of *physical memory* present in the system. The key idea here is paging based on LRU (Least Recently Used) policy
 - [Fair CPU Scheduling](https://www.kernel.org/doc/html/latest/scheduler/sched-design-CFS.html) - Linux schedules `tasks` (aka `threads`) within various processes in a fair manner while honoring their priorities, while preventing starvation. Designing a good, low overhead scheduler is *very* hard!
 
+Conceptual model of a Linux process, with User/Kernel mode ideas is as follows:
+
+```mermaid
+graph TD
+    subgraph User_Space["User Space"]
+        A[Process]
+        A1[Code - Text Segment]
+        A2[Data - Initialized Data]
+        A3[BSS - Uninitialized Data]
+        A4[Heap - malloc/new]
+        A5[Stack - Function Calls, Local Vars]
+        A6[Shared Libraries - libc, libm, etc.]
+    end
+
+    subgraph Kernel_Space["Kernel Space"]
+        K1[Task_struct #40;Process Control Block#41;]
+        K2[Kernel Stack #40;Per-Process Stack#41;]
+        K3[File Descriptors]
+        K4[Memory Mappings #40;VMAs#41;]
+        K5[Scheduler]
+        K6[System Calls Interface]
+    end
+
+    subgraph Hardware["CPU & Memory"]
+        H1[MMU #40;Memory Management Unit#41;]
+        H2[CPU Registers]
+        H3[Page Tables]
+    end
+
+    %% Relationships
+    A -->|exec#40;#41;, fork#40;#41;, clone#40;#41;| K1
+    A -->|syscalls #40;read, write, open, etc.#41;| K6
+    K6 --> K5
+    K1 --> K2
+    K1 --> K3
+    K1 --> K4
+    K4 --> H3
+    H3 --> H1
+    H1 --> H2
+
+    %% Additional concepts
+    A5 -->|function calls| A1
+    A4 -->|dynamic allocation| K4
+    A6 -->|loaded via ld.so| A
+
+    %% Styles
+    classDef user fill:#d0f0ff,stroke:#0077b6,stroke-width:1px;
+    classDef kernel fill:#ffd6a5,stroke:#e67e22,stroke-width:1px;
+    classDef hardware fill:#d3f8d3,stroke:#28a745,stroke-width:1px;
+
+    class A,A1,A2,A3,A4,A5,A6 user;
+    class K1,K2,K3,K4,K5,K6 kernel;
+    class H1,H2,H3 hardware;
+```
+
+
 ## Getting started
 
 You can install Linux on your laptop/desktop directly. Alternatively, you can use `multipass` to install it inside a `virtual machine` as per the detailed instructions in [Setup](Setup.md). Please follow those instructions (if you haven't done so already and then come back here).
