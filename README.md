@@ -1,12 +1,5 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-# Agenda
-
-- [Order of Presentations](#order-of-presentations)
-- [Lab Assignments](#lab-assignments)
-- [Tracking Document](#tracking-document)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<!-- START doctoc -->
+<!-- END doctoc -->
 Systems Programming Workshop for ACM India
 
 ## Order of Presentations
