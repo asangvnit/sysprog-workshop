@@ -8,9 +8,7 @@
   - [Tracking Document](#tracking-document)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-# Agenda
-
-Systems Programming Workshop @Palloti College on 1st Nov 2025.
+Systems Programming Workshop for ACM India
 
 ## Order of Presentations
 
