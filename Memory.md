@@ -51,6 +51,9 @@ graph TB
     L2 -->|hit| CPU
     L3 -->|hit| CPU
 ```
+
+## L1 Cache
+
 - Separate Instruction and Data Cache
 - Typical size of single line - 64 bytes
 - Number of cache lines = 32 kB / 64 = 512
@@ -166,7 +169,6 @@ graph TB
     C5 --> Set0
 ```
 
-## L1 Cache
 ## References
 
 - [What Every Programmer Should Know About Memory](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf)
