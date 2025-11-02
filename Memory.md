@@ -10,6 +10,7 @@
     - [Direct Mapped](#direct-mapped)
     - [Fully Associative](#fully-associative)
     - [Set Associative](#set-associative)
+  - [Cache Design On Today's Multi-Core CPUs](#cache-design-on-todays-multi-core-cpus)
   - [References](#references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
