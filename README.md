@@ -7,7 +7,6 @@ Systems Programming Workshop for ACM India
 - [Tracking Document](#tracking-document)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-Systems Programming Workshop for ACM India
 
 ## Order of Presentations
 
