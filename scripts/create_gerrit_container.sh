@@ -7,3 +7,8 @@ export GERRIT_SITE=~/gerrit_testsite
 java -jar ~/Downloads/gerrit-3.12.2.war init --batch --dev -d $GERRIT_SITE --install-all-plugins
 # Now create a group Students
 ssh -p 29418 admin@localhost gerrit create-group Students
+# Replace 192.168.1.100 with IP address of the system on which you are running Gerrit Server
+git config --file $GERRIT_SITE/etc/gerrit.config gerrit.canonicalWebUrl 'http://92.168.1.100:8080'
+# Change listenUrl
+git config --file $GERRIT_SITE/etc/gerrit.config httpd.listenUrl 'http://*:8080'
+$GERRIT_SITE/bin/gerrit.sh restart
