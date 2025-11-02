@@ -170,7 +170,7 @@ graph TB
     C5 --> Set0
 ```
 
-## Cache Design On Today's Multi-Core CPUs
+## Appendix: Cache Design for Multi-Core CPUs
 
 Today, most processors are mutli-core. So it is important to understand how the caches are organized. Here is a view for a dual-core processor. If the number of core is larger, you just have to extrapolate the picture
 
