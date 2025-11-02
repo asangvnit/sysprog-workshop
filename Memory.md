@@ -27,7 +27,7 @@ Caching works on the principle of:
 1. **Temporal locality** - If we accessed some memory recently, then its likely that I will need to access it again in near future
 2. **Spatial locality** - If we accessed some area in memory, its quite likely that *adjacencent* memory locations would be needed again - think about fields in a `struct/class` in C/C++ or elements in an array.
 
-Another important thing to remember about memory hierarchy is *lower the level, faster the access and closeness to the CPU*. Lower level caches are smaller and more expensive. e.g. L1 caches are more expensive than L2 caches. Typical hierachical memory structure with cache sizes and model is shown below. 
+Another important thing to remember about memory hierarchy is *lower the level, faster the access and closeness to the CPU*. Lower level caches are smaller and more expensive. e.g. L1 caches are more expensive than L2 caches. For most modern processors, each cache line is 64 bytes. Which means that if you design your data structures such that they align well with cache line width, it will positively impact the performance of your application. Typical hierachical memory view with cache sizes and model is shown below. 
 
 ```mermaid
 graph TB
@@ -51,7 +51,27 @@ graph TB
     L2 -->|hit| CPU
     L3 -->|hit| CPU
 ```
-## Type of Caches
+- Separate Instruction and Data Cache
+- Typical size of single line - 64 bytes
+- Number of cache lines = 32 kB / 64 = 512
+- 8 way means 512 / 8 = 64 sets.
+- Lowest 8 bit of the address correspond to an offset within a cache line and next 8 bits *implicitly* correspond to the set. Upper 16 bits (in case of 32-bit addrss) correspond to Tag bits - which are stored for each cache entry.
+- Multiple addresses *alias* to the same set within cache. with 8 way-associative caches when comparing Tag bits within an address, comparison with Tags for all 8 cache lines within a set are compared parallely for efficiency.
+
+## Cost of Memory Access
+
+| Memory Level       | Access Time (cycles) | Typical Size  | Notes                                                  |
+| ------------------ | -------------------- | ------------- | ------------------------------------------------------ |
+| L1 Cache           | 3 – 5                | 32–128 KB     | Fastest, private to core, VIPT (Virtually Indexed, Physically Tagged) indexing                |
+| L2 Cache           | 10 – 20              | 256 KB – 1 MB | Private to core or cluster, slower than L1             |
+| L3 Cache           | 30 – 50              | 2–64 MB       | Shared between cores, physically indexed               |
+| Main Memory (DRAM) | 50 – 150             | GBs           | Orders of magnitude slower, physical address access    |
+| SSD/NVMe Storage   | 100K – 1M            | TBs           | Persistent storage, accessed via OS/hardware interface |
+| HDD                | 1M – 10M             | TBs           | Much slower, mechanical latency dominates              |
+
+## Appendix: Aliasing and Types of Caches
+
+If you want to understand how aliasing can be handled and how it affects design and cost of building such caches, keep reading..
 
 ### Direct Mapped
 
@@ -147,24 +167,6 @@ graph TB
 ```
 
 ## L1 Cache
-- Separate Instruction and Data Cache
-- Typical size of single line - 64 bytes
-- Number of cache lines = 32 kB / 64 = 512
-- 8 way means 512 / 8 = 64 sets.
-- Lowest 8 bit of the address correspond to an offset within a cache line and next 8 bits *implicitly* correspond to the set. Upper 16 bits (in case of 32-bit addrss) correspond to Tag bits - which are stored for each cache entry.
-- Multiple addresses *alias* to the same set within cache. with 8 way-associative caches when comparing Tag bits within an address, comparison with Tags for all 8 cache lines within a set are compared parallely for efficiency.
-
-## Cost of Memory Access
-
-| Memory Level       | Access Time (cycles) | Typical Size  | Notes                                                  |
-| ------------------ | -------------------- | ------------- | ------------------------------------------------------ |
-| L1 Cache           | 3 – 5                | 32–128 KB     | Fastest, private to core, VIPT (Virtually Indexed, Physically Tagged) indexing                |
-| L2 Cache           | 10 – 20              | 256 KB – 1 MB | Private to core or cluster, slower than L1             |
-| L3 Cache           | 30 – 50              | 2–64 MB       | Shared between cores, physically indexed               |
-| Main Memory (DRAM) | 50 – 150             | GBs           | Orders of magnitude slower, physical address access    |
-| SSD/NVMe Storage   | 100K – 1M            | TBs           | Persistent storage, accessed via OS/hardware interface |
-| HDD                | 1M – 10M             | TBs           | Much slower, mechanical latency dominates              |
-
 ## References
 
 - [What Every Programmer Should Know About Memory](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf)
