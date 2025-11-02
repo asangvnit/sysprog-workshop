@@ -17,7 +17,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Introduction to docker
+## Introduction to docker
 
 - Haven't heard of [docker](https://docker.com/)? Were you sleeping under a rock?
 - Official definition is not very useful

@@ -16,7 +16,9 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Prerequisites for Systems Programming Workshop
+## Prerequisites for Systems Programming Workshop
+
+Following sections describe conceptual prerequisites and system requiremnents and prerequisites for this workshop
 
 ## What you should know?
 

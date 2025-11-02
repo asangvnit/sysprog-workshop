@@ -14,7 +14,6 @@
   - [References](#references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-# Getting ready to use the git & gerrit workflow
 
 ## Working collaboratively in a controlled environment
 

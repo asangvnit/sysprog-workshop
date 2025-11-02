@@ -12,7 +12,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Instructions for setting up gerrit server/container
+## Instructions for setting up gerrit server/container
 
 ## Install docker on your system
 

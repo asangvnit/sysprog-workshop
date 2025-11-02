@@ -14,8 +14,6 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Understanding git basics
-
 ## What is git and why is it required?
 
 Scalable distributed version control system (VCS) that's most widely used and well supported. When you develop software, you need to able to track changes to it and be able to continue to develop it while being able to release working versions to your customers. Version control system allows you to do that. [Git](https://git-scm.com/) is also used by Linux kernel. Being distributed means that you have a complete copy the *repository* on your machine thereby allowing you to look at the history, commit changes locally and synchronize with others when you are ready.

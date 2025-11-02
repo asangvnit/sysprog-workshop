@@ -9,7 +9,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Leaks, locks and much more
+## Leaks, locks and much more
 
 When writing large programs that run in the background - servers/services, its is not enough to validate that they function correctly. It is extremely important to ensure that they do not *Leak* resources. Resource leaks can be any one of the following:
 

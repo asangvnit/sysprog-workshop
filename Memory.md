@@ -15,7 +15,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# What Every Programmer Should Know..
+## What Every Programmer Should Know..
 
 Almost all modern systems use Memory Hierarchies. Understanding how interaction between CPU and memory hierarchy works and programming with `cache friendliness` in mind has a profound impact on performance of your application and how you choose, design, and tune your data structures.
 
