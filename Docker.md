@@ -12,7 +12,7 @@
     - [Lets test if the web server is running](#lets-test-if-the-web-server-is-running)
     - [Stopping & removing the container](#stopping--removing-the-container)
   - [CICD flow](#cicd-flow)
-  - [We are already using the CICD workflow for this repository](#we-are-already-using-the-cicd-workflow-for-this-repository)
+  - [CICD workflow in action](#cicd-workflow-in-action)
   - [For more information](#for-more-information)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
