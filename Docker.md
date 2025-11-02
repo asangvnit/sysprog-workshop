@@ -142,7 +142,7 @@ Following diagram depicts typical CICD flow using the docker image
   <img src="images/cicd.png" alt="cicd" width="400">
 </div>
 
-## We are already using the CICD workflow for this repository
+## CICD workflow in action
 
 Didn't realize that, right? Just look at the [Actions](https://github.com/asangvnit/sysprog-workshop/actions) tab. There are two `workflows` that we have created.
 
