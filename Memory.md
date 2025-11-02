@@ -169,6 +169,72 @@ graph TB
     C5 --> Set0
 ```
 
+## Cache Design On Today's Multi-Core CPUs
+
+Today, most processors are mutli-core. So it is important to understand how the caches are organized. Here is a view for a dual-core processor. If the number of core is larger, you just have to extrapolate the picture
+
+```mermaid
+graph TD
+    %% CPU Cores
+    subgraph CPU["Dual-Core Processor"]
+        subgraph Core0["Core 0"]
+            C0R[Registers]
+            C0L1I[L1 Instruction Cache]
+            C0L1D[L1 Data Cache]
+            C0CC[Core 0 Cache Controller]
+        end
+
+        subgraph Core1["Core 1"]
+            C1R[Registers]
+            C1L1I[L1 Instruction Cache]
+            C1L1D[L1 Data Cache]
+            C1CC[Core 1 Cache Controller]
+        end
+
+        subgraph Shared_L2_L3["Shared Caches"]
+            L2[L2 Cache #40;per-core or shared#41;]
+            L3[L3 Cache #40;Shared, Inclusive#41;]
+            L3CC[L3 Cache Controller]
+        end
+    end
+
+    subgraph Memory_Subsystem["Memory Subsystem"]
+        MC[Memory Controller]
+        DRAM[Main Memory #40;DRAM#41;]
+    end
+
+    %% Connections
+    C0R --> C0L1I
+    C0R --> C0L1D
+    C0L1I --> C0CC
+    C0L1D --> C0CC
+    C0CC --> L2
+    C1R --> C1L1I
+    C1R --> C1L1D
+    C1L1I --> C1CC
+    C1L1D --> C1CC
+    C1CC --> L2
+    L2 --> L3
+    L3 --> L3CC
+    L3CC --> MC
+    MC --> DRAM
+
+    %% Coherency Links
+    C0CC <--> C1CC
+    L3CC <--> C0CC
+    L3CC <--> C1CC
+
+    %% Styles
+    classDef core fill:#d0f0ff,stroke:#0077b6,stroke-width:1px;
+    classDef shared fill:#ffd6a5,stroke:#e67e22,stroke-width:1px;
+    classDef memory fill:#d3f8d3,stroke:#28a745,stroke-width:1px;
+
+    class C0R,C0L1I,C0L1D,C0CC,Core0,C1R,C1L1I,C1L1D,C1CC,Core1 core;
+    class L2,L3,L3CC,Shared_L2_L3 shared;
+    class MC,DRAM,Memory_Subsystem memory;
+```
+
+
 ## References
 
 - [What Every Programmer Should Know About Memory](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf)
