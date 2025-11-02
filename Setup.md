@@ -18,7 +18,7 @@
 
 ## Prerequisites for Systems Programming Workshop
 
-Following sections describe conceptual prerequisites and system requiremnents and prerequisites for this workshop
+Following sections describe conceptual prerequisites and system requirements for this workshop.
 
 ## What you should know?
 
