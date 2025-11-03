@@ -38,12 +38,16 @@ int main(void)
    return 0;
 }
 ```
+
 Save this file as `test.c` and compile it
-```sh
-gcc -g test.c -o test
+
+```console
+$ gcc -g test.c -o test
 ```
+
 Run it under valgrind leak checker
-```sh
+
+```console
 $ valgrind --leak-check=yes ./test
 ==4122746== Memcheck, a memory error detector
 ==4122746== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
@@ -78,11 +82,14 @@ $ valgrind --leak-check=yes ./test
 ==4122746== For lists of detected and suppressed errors, rerun with: -s
 ==4122746== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 ```
+
 It clearly shows both the issues: heap overrun on line 6 and leaked memory on line 5.
 
 ## Cachegrind - cache and branch profiler
+
 Valgrind supports tool called `cachegrind` that helps identify problems with modern programs that interact poorly with [CPU caches](../Memory.md) and processor branch prediction and reports cache misses and branch mispredictions. Consider following example where we run the `bottlenecks-mt` command under `valgrind --tool=cachegrind`.
-```sh
+
+```console
 ubuntu@sysprog:/sysprog/perf-demo$ valgrind --tool=cachegrind --verbose --cache-sim=yes --branch-sim=yes ./bottlenecks-mt
 ==3140== Cachegrind, a high-precision tracing profiler
 ==3140== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
@@ -149,7 +156,8 @@ It takes some effort to understand the acronym soup here.
 - LL refs = total number of last-level cache accesses (misses from L1)
 
 For the branch prediction section `cond` - Conditional branches, `ind` - Indirect branches. Running the above command also produces a file like `cachegrind.out.3140`. This can be used to annotate the source code for further analysis of where the issues are.
-```sh
+
+```console
 ubuntu@sysprog:/sysprog/perf-demo$ cg_annotate cachegrind.out.3140
 -- Metadata
 --------------------------------------------------------------------------------

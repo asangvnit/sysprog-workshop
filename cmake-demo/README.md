@@ -27,7 +27,7 @@ On windows [Download cmake binary installer](https://cmake.org/download/), doubl
 
 ### Debian/Ubuntu Linux
 
-```sh
+```console
 $ sudo apt install -y cmake
 Reading package lists... Done
 Building dependency tree... Done
@@ -68,7 +68,7 @@ Processing triggers for libc-bin (2.39-0ubuntu8.6) ...
 ```
 ### MacOS
 
-```sh
+```console
 $ brew install cmake
 ==> Fetching cmake
 ==> Downloading https://ghcr.io/v2/homebrew/core/cmake/blobs/sha256:a9a87dd3bdc0751b398eb60ca9bbbdb35a494478423af6b5a1ecc3594df48f6
@@ -98,7 +98,7 @@ add_executable(test test.cpp)
 
 In the current directory, run:
 
-```sh
+```console
 $ ls
 CMakeLists.txt  test.cpp
 $ cmake -S . -B build
@@ -139,27 +139,27 @@ Hello World Works
 
 To run the tests, run:
 
-```sh
-cd build && ctest -V --output-on-failure
+```console
+$ cd build && ctest -V --output-on-failure
 ```
 
 Alternatively, you can run:
 
-```sh
-cmake --build build --target test
+```console
+$ cmake --build build --target test
 ```
 
 To clean the build artifacts, run:
 
-```sh
-cmake --build build --target clean
+```console
+$ cmake --build build --target clean
 ```
 
 ## More advanced example
 
 In real C++ programs, you don't write all the code in just one file! If I am sounding too naiive, believe me that I see this all the time when I talk to students. This is not maintainable. You typically develop large sofware as independent components that are built into `shared libraries` that are then integrated and used to build one large functional program. Here is how can can organize a program:
 
-```sh
+```console
 ├── CMakeLists.txt
 ├── cpphello.cpp
 ├── helloprint.cpp
@@ -225,7 +225,7 @@ target_link_libraries(cpphello helloprint)
 
 In order to build the program run following commands:
 
-```sh
+```console
 $ cmake -S . -B build
 -- The C compiler identification is GNU 13.3.0
 -- The CXX compiler identification is GNU 13.3.0
@@ -280,7 +280,8 @@ gmake[1]: Leaving directory '/home/asang/sysprog-workshop/cmakedemo/progwithtest
 ```
 
 Lets see the hierarchy of generated files in `build` folder:
-```sh
+
+```console
 $ tree build
 
 ├── CMakeCache.txt
@@ -339,7 +340,8 @@ $ tree build
 ```
 
 Notice that shared library `libhelloprint.so` has been generated and linked against `cpphello`. How do we see that?
-```sh
+
+```console
 $ cd build && ldd cpphello
      linux-vdso.so.1 (0x00007bd764853000)
      libhelloprint.so => /home/asang/sysprog-workshop/cmakedemo/progwithtest/build/libhelloprint.so (0x00007bd764843000)
@@ -349,11 +351,16 @@ $ cd build && ldd cpphello
      libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007bd764714000)
      /lib64/ld-linux-x86-64.so.2 (0x00007bd764855000)
 ```
+
 `ldd` shows shared libraries an executable depends on.
 
 ## Automated testing with googletest
 
-Unit testing is part of the software development lifecycle for every developer. There are several ways to do it. For C++ there in extremely popular option [GoogleTest](https://github.com/google/googletest) that is widely used. We will see a simple example of it and how it integrated with our example. Before explaining everything else, lets see the test program:
+Unit testing is part of the software development lifecycle for every developer.
+There are several ways to do it. For C++ there in extremely popular option
+[GoogleTest](https://github.com/google/googletest) that is widely used. We will
+see a simple example of it and how it integrated with our example. Before
+explaining everything else, lets see the test program:
 
 ### hello_test.cpp
 
@@ -369,7 +376,10 @@ TEST(HelloTest, BasicAssertions) {
 }
 ```
 
-As you can see the test program has two expectations - first is that `get_hello` function does not a string `hello` and second that it returns `Hello World Indeed!`. To integrate it with your `cmake` based system, just add following lines at the end of your `CMakeLists.txt` file:
+As you can see the test program has two expectations - first is that
+`get_hello` function does not a string `hello` and second that it returns
+`Hello World Indeed!`. To integrate it with your `cmake` based system, just add
+following lines at the end of your `CMakeLists.txt` file:
 
 ```cmake
 include(FetchContent)
@@ -401,7 +411,7 @@ gtest_discover_tests(hello_test)
 
 To build and run the tests, just execute:
 
-```sh
+```console
 $ cmake --build build
 /usr/bin/cmake -S/home/asang/sysprog-workshop/cmakedemo/progwithtest -B/home/asang/sysprog-workshop/cmakedemo/progwithtest/build --check-build-system CMakeFiles/Makefile.cmake 0
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
@@ -503,7 +513,8 @@ gmake[1]: Leaving directory '/home/asang/sysprog-workshop/cmakedemo/progwithtest
 ```
 
 To test it, run:
-```sh
+
+```console
 $ cmake --build build --target test
 
 Running tests...

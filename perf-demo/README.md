@@ -18,13 +18,13 @@ All the demonstrations in this presentations have been run insidle `multipass` u
 
 To compile the program, use:
 
-```
+```console
 $ g++ -O2 -g -ggdb -fno-inline -std=c++17 bottlenecks.cpp -o bottlenecks
 ```
 
 Now you can run it under `perf`
 
-```sh
+```console
 $ sudo perf record -g -F 99 -- ./bottlenecks
 
 Starting CPU-bound section...
@@ -40,7 +40,7 @@ Total time: 0.170326 s
 
 This produces a file `perf.data` in the current directory as shown above. There are multiple ways to analyze the output. Simplest is to use `perf report` command as follows:
 
-```sh
+```console
 $ sudo perf report -g --stdio
 
 # To display the perf.data header info, please use --header/--header-only options.
@@ -81,24 +81,30 @@ $ sudo perf report -g --stdio
 
 This is how I use it in my work day in and day out. [Brendan Gregg](https://www.brendangregg.com/index.html) created this magical tool that helps us visualize profiling results. He as also documented [Linux performance observability](https://www.brendangregg.com/linuxperf.html) extensively. It posprocesses `perf.data` to produce a `SVG` (Scalable Vector Graphics) file that can be loaded in web-browser enabling us to search/dissect it interactively. He has published his work [here](https://github.com/brendangregg/FlameGraph). Here is how we can use it. First download the scripts from Brendan's github repo.
 
-```sh
+```console
 $ wget https://raw.githubusercontent.com/brendangregg/FlameGraph/refs/heads/master/stackcollapse-perf.pl
 $ wget https://raw.githubusercontent.com/brendangregg/FlameGraph/refs/heads/master/flamegraph.pl
 ```
 
 Once you have these two scripts, we can run in on our `perf.data` file.
 
-```sh
+```console
 $ sudo perf script > bottlenecks.perf
 $ perl stackcollapse-perf.pl bottlenecks.perf > bottlenecks.folded
 $ perl flamegraph.pl bottlenecks.folded > bottlenecks.svg
 ```
-All this we need to do is point the browser at [bottlenecks.svg](bottlenecks.svg). You can delete `bottlenecks.perf` and `bottlenecks.folded`.
+
+All this we need to do is point the browser at
+[bottlenecks.svg](bottlenecks.svg). You can delete `bottlenecks.perf` and
+`bottlenecks.folded`.
 
 ## Multi-threaded version of bottlenecks
 
-Flamegraph is equally useful for looking at the performance of multi-threaded programs. MT version of our demo [bottlenecks-mt.cpp](bottlenecks-mt.cpp) can be analyzed as follows:
-```sh
+Flamegraph is equally useful for looking at the performance of multi-threaded
+programs. MT version of our demo [bottlenecks-mt.cpp](bottlenecks-mt.cpp) can
+be analyzed as follows:
+
+```console
 $ g++ -O2 -g -ggdb -fno-inline -std=c++17 bottlenecks-mt.cpp -o bottlenecks-mt
 
 $ sudo perf record -g -F 99 -- ./bottlenecks-mt
@@ -119,7 +125,8 @@ Total time: 0.0847577 s
 ```
 
 Notice that the samples are significantly higher - given that they need to be collected for each execution unit. Post processing steps are identical.
-```sh
+
+```console
 $ sudo perf script > bottlenecks-mt.perf
 $ perl stackcollapse-perf.pl bottlenecks.perf > bottlenecks-mt.folded
 $ perl flamegraph.pl bottlenecks.folded > bottlenecks-mt.svg
@@ -128,7 +135,8 @@ The [result](bottlenecks-mt.svg) is interesting.
 
 ## Running perf tools on Windows/Mac
 Just connect to your `sysprog` instance.
-```sh
+
+```console
 $ sudo multipass shell sysprog
 Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
 
@@ -162,8 +170,10 @@ See "man sudo_root" for details.
 
 ubuntu@sysprog:~$
 ```
+
 Test that perf works
-```sh
+
+```console
 ubuntu@sysprog:~$ sudo perf record -a -g sleep 10
 
 [ perf record: Woken up 4 times to write data ]
@@ -191,6 +201,7 @@ ubuntu@sysprog:~$ sudo perf report -g --stdio
                                       --11.68%--default_idle_call
 ...
 ```
+
 ## References
 
 1. [Linux Observability tools](https://www.brendangregg.com/linuxperf.html)

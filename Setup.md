@@ -51,7 +51,7 @@ Make sure that you download and install the latest version of [docker desktop](h
 Execute following commands inside the terminal windows inside `docker desktop` application
 
 
-```sh
+```console
 $ docker pull codercom/code-server
 $ docker images
 REPOSITORY                  TAG         IMAGE ID       CREATED        SIZE
@@ -62,7 +62,7 @@ Once the image is pulled, we can now create a container based on it and install 
 
 #### On Windows host
 
-```sh
+```console
 C:\Users\Amar> mkdir config dev
 C:\Users\Amar> docker run -d --name code-server -p 8081:8080 -v ./dev:/workspace -v ./config:/home/coder/.config codercom/code-server
 783a94d539dbecb76a2a4afb538569cb426296f94dd6b3f98f57f6540cb841ee
@@ -72,7 +72,7 @@ CONTAINER ID   IMAGE                         COMMAND                  CREATED   
 ```
 
 #### On Linux/MacOS host
-```sh
+```console
 $ cd ~
 $ mkdir config dev
 $ chmod 777 -R config dev
@@ -92,7 +92,7 @@ $ docker exec -it code-server cat /home/coder/.config/code-server/config.yaml
 
 Copy the password displayed after `password:` prompt and use it to login to VS Code inside your browser. From the menu for VSCode, search for “Terminal | New Terminal” and run the following commands:
 
-```sh
+```console
 $ sudo apt update
 $ sudo apt install -y apt-file bind9-dnsutils build-essential gdb git cmake iputils-ping valgrind iproute2
 ```
@@ -112,12 +112,13 @@ The steps to install `multipass` are slightly different for Windows and MacOS. F
 ### Installing multipass on MacOS
 
 First, you need to install [HomeBrew](https://brew.sh/)
-```sh
+```console
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 Now we are ready to install multipass.
-```sh
+
+```console
 $ brew install --cask multipass
 ==> Downloading https://raw.githubusercontent.com/Homebrew/homebrew-cask/aa0c7e1341889c0992cda0693a043b898fe6b34c/Casks/m/multipass.rb
 ########################################################################################################################################################################################## 100.0%
@@ -134,7 +135,7 @@ installer: The install was successful.
 ```
 Now you can go to the command prompt and create ubuntu instance. Here, we create an ubuntu instance with 4GB RAM, 10GB diskspace and 4 CPUs. You can choose different parameters based on your system capabilities.
 
-```sh
+```console
 $ sudo multipass launch --name sysprog --cpus 4 --memory 4G --disk 10G 24.04
 Launched: sysprog
 $ sudo multipass list
@@ -144,7 +145,7 @@ sysprog                 Running           192.168.2.2      Ubuntu 24.04 LTS
 
 Now connect to it:
 
-```sh
+```console
 $ sudo multipass shell sysprog
 Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
 
@@ -181,8 +182,16 @@ ubuntu@sysprog:~$
 
 ### Installing multipass on Windows
 
-[Download](https://canonical.com/multipass/download/windows) multipass for windows and run the installer. During installation, when prompted use Microsoft's [Hyper-V](https://en.wikipedia.org/wiki/Hyper-V) as the [Hypervisor](https://en.wikipedia.org/wiki/Hypervisor). If you have `Windows 10 Home` edition, which doesn't supports Hyper-V, you will need to download and install [VirtualBox](https://virtualbox.org/). So please do that first. Once multipass is installed, you can go to the command prompt and create an ubuntu instance. Open `cmd` window and execute following commands:
-```sh
+[Download](https://canonical.com/multipass/download/windows) multipass for
+windows and run the installer. During installation, when prompted use
+Microsoft's [Hyper-V](https://en.wikipedia.org/wiki/Hyper-V) as the
+[Hypervisor](https://en.wikipedia.org/wiki/Hypervisor). If you have `Windows 10
+Home` edition, which doesn't supports Hyper-V, you will need to download and
+install [VirtualBox](https://virtualbox.org/). So please do that first. Once
+multipass is installed, you can go to the command prompt and create an ubuntu
+instance. Open `cmd` window and execute following commands:
+
+```console
 C:\>cd C:\Program Files\Multipass\bin
 C:\Program Files\Multipass\bin>multipass version
 multipass   1.16.1+win
@@ -191,7 +200,7 @@ multipassd  1.16.1+win
 
 Create ubuntu instance on Windows following similar steps as explain above.
 
-```sh
+```console
 C:\Program Files\Multipass\bin>multipass launch --name sysprog --cpus 4 --memory 4G --disk 10G 24.04
 Launched: sysprog
 
@@ -202,7 +211,7 @@ sysprog                 Running           192.168.115.22   Ubuntu 24.04 LTS
 
 Now connect to it:
 
-```sh
+```console
 C:\Program Files\Multipass\bin>multipass shell sysprog
 Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic aarch64)
 
@@ -236,8 +245,10 @@ See "man sudo_root" for details.
 
 ubuntu@sysprog:~$
 ```
+
 For system version details, run
-```sh
+
+```console
 ubuntu@sysprog:~$ uname -a
 Linux sysprog 6.8.0-85-generic #85-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 18 15:21:04 UTC 2025 aarch64 aarch64 aarch64 GNU/Linux
 ubuntu@sysprog:~$ uname -r
@@ -254,7 +265,7 @@ $ multipass shell sysprog
 
 Install the necessary tools and make sure they work.
 
-```sh
+```console
 $ sudo apt update
 $ sudo apt install -y linux-tools-common linux-tools-generic
 $ sudo apt install -y apt-file bind9-dnsutils build-essential gdb git cmake iputils-ping valgrind iproute2
