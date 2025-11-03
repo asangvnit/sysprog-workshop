@@ -19,11 +19,26 @@ Scalable distributed version control system (VCS) that's most widely used and we
 
 ## How do you get started
 
+These steps should be done inside `code-server` container. So the first step is to enter the container using `docker exec` CLI as follows:
+
+```console
+$ docker exec -it code-server bash
+coder@3929e2690e0e:~
+```
+
 ### Step 1 - Basic configuration
 
 Git is preinstalled on almost all Linux systems. Git clients are also available for Windows and MacOS. There are some one-line configuration steps you need to do before working with git on your system
 
 [![asciicast](https://asciinema.org/a/aqguNuYKYZ95f97IInF6vzbos.svg)](https://asciinema.org/a/aqguNuYKYZ95f97IInF6vzbos)
+
+```console
+$ git config --global user.name 'Asang Dani'
+$ git config --global user.email asang.dani@gmail.com
+$ git config --global --list
+user.name=Asang Dani
+user.email=asang.dani@gmail.com
+```
 
 ### Step 2 - Setting up the repository
 
@@ -31,11 +46,95 @@ Second step is to setup a git repository i.e. the *master copy*. Here is how:
 
 [![asciicast](https://asciinema.org/a/0x8A4o7VPxrFxj0whwVj5X24o.svg)](https://asciinema.org/a/0x8A4o7VPxrFxj0whwVj5X24o)
 
+```console
+$ mkdir gitrepo
+$ cd gitrepo
+$ ls
+$ git init --bare
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/coder/gitrepo/
+$ ls
+branches  config  description  HEAD  hooks  info  objects  refs
+$
+```
 ### Step 3 - Cloning the repository and working with it
 
 Now that the repository is setup, you need to *clone* it. This is the working copy of the repository on your system where all your commit as first submitted. Periodically, you can *push* the changes to the master repository - also pulling from it to get the changes other teammates are making.
 
 [![asciicast](https://asciinema.org/a/KK9P6tChHWpd2Y1wbowlojCRe.svg)](https://asciinema.org/a/KK9P6tChHWpd2Y1wbowlojCRe)
+
+```console
+$ git clone ~/gitrepo clone1
+Cloning into 'clone1'...
+warning: You appear to have cloned an empty repository.
+done.
+$ cd clone1
+$ # Create a file with one line of text in `nano` editor and save it
+$ nano file1.txt
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	file1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+$ git add file1.txt
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   file1.txt
+$ git commit
+[master (root-commit) 0c0e9a8] This is my very first commit. I shouldn't be scared by I am!
+ 1 file changed, 2 insertions(+)
+ create mode 100644 file1.txt
+$ git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+$ git log
+commit 0c0e9a85e80c8eab30e2eb41adaaa626c5a38450 (HEAD -> master)
+Author: Asang Dani <asang.dani@gmail.com>
+Date:   Sat Oct 25 15:20:09 2025 +0000
+
+    This is my very first commit. I shouldn't be scared by I am!
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 297 bytes | 297.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To /home/coder/gitrepo
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+$ git log
+commit 0c0e9a85e80c8eab30e2eb41adaaa626c5a38450 (HEAD -> master, origin/master)
+Author: Asang Dani <asang.dani@gmail.com>
+Date:   Sat Oct 25 15:20:09 2025 +0000
+
+    This is my very first commit. I shouldn't be scared by I am!
+$ git log --oneline
+0c0e9a8 (HEAD -> master, origin/master) This is my very first commit. I shouldn't be scared by I am!
+$
+```
 
 ### Step 4 - Collaborating with others - conflicts and rebasing
 
