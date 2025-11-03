@@ -24,7 +24,6 @@ The suggested order of reading for self study is given below. Most of the presen
 
 ## Lab Assignments
 
-- [Check your local setup](GitAndGerritUsers.md)
 - [Complete the assignments](Assignments.md)
 
 ## Tracking Document
