@@ -144,53 +144,47 @@ One of the main benefits of using a VCS is to be able to collaborate with others
 
 ## Important Git Commands
 
-Show the status of current git clone
-
-```sh
-git status
-```
-
 Git history view git branches and short commit hashes
 
-```sh
-git log --graph --oneline --decorate --all
+```console
+$ git log --graph --oneline --decorate --all
 ```
 
 Pull git changes from upstream and rebase them
 
-```sh
-git pull origin main -r
+```console
+$ git pull origin main -r
 ```
 
 Create a new topic branch and check it out
 
-```sh
-git checkout -b mytopic
+```console
+$ git checkout -b mytopic
 ```
 
 Push changes upstream for a local branch while setting the upstream tracking
 
-```sh
-git push -u origin mytopic 
+```console
+$ git push -u origin mytopic 
 ```
 
 Show local branches
 
-```sh
-git branch -l
+```console
+$ git branch -l
 ```
 
 Merge changes from main into *mytopic* branch (when currently *mytopic* branch is checked out)
 
-```sh
-git rebase main
-git rebase main mytopic
+```console
+$ git rebase main
+$ git rebase main mytopic
 ```
 
 Display detailed log messages for each commit in patch mode with statistics about the changes
 
-```sh
-git log -p --stat
+```console
+$ git log -p --stat
 ```
 ## Branching and Merging
 

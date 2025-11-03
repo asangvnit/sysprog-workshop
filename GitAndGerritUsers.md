@@ -29,7 +29,7 @@ If you are using your own `Gerrit Server`, follow [these instructions](gerrit-se
 
 You should connect to Gerrit from inside your `code-server` [container](Setup.md#installing-code-server-docker-container) as all the programming tools are installed there. First step is to order to generate a SSH keypair. SSH key is required to clone the git repositories hosted by Gerrit Code Review via `ssh` command. To enter the code-server container shell, execute following command:
  
-```sh
+```console
 $ docker exec -it code-server /bin/bash
 coder@3929e2690e0e:~
 ```
@@ -38,7 +38,7 @@ coder@3929e2690e0e:~
 
 Once you are inside the code-server container, run the following command to generate a SSH public-private keypair, run the following command:
  
-```sh
+```console
 coder@3929e2690e0e:~$ ssh-keygen -f ~/.ssh/id_ed25519 -t ed25519 -N ""
 Generating public/private ed25519 key pair.
 Created directory '/home/coder/.ssh'.
@@ -73,7 +73,7 @@ drwx------ 1 coder coder 4096 Oct 25 10:27 ..
 
 You need to copy the public key to your Gerrit Account. So first display its contents
 
-```sh
+```console
 coder@3929e2690e0e:~$ cat ~/.ssh/id_ed25519.pub
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC17YXcm9X3FSkvepinKFWrYbOsTzD2WMUYWPrZqj7kA asangdani@8d51b53d46e7
 ```
@@ -90,7 +90,7 @@ Once the administrator has created a project for you, you can [clone it](http://
 
 ![gerrit clone command](images/gerrit-clone-cmd.png)
 
-```sh
+```console
 coder@3929e2690e0e:~$ git clone "ssh://asang@server-ip:29418/myproject" && (cd "myproject" && mkdir -p `git rev-parse --git-dir`/hooks/ && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://server-ip:8080/tools/hooks/commit-msg && chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
 
 Cloning into 'myproject'...
@@ -134,7 +134,7 @@ main()
 
 Add it to git repo
 
-```sh
+```console
 coder@3929e2690e0e:~/myproject$ nano hello.cpp
 coder@3929e2690e0e:~/myproject$ git status
 On branch master
@@ -160,7 +160,7 @@ Changes to be committed:
 
 Now commit the changes. You can use `nano` editor for your commit message. Make sure that first line is short (less than 80 characters) and title of the changes.
 
-```sh
+```console
 coder@3929e2690e0e:~/myproject$ git commit
 [master (root-commit) e890de6] This is a hello world program
  1 file changed, 7 insertions(+)
@@ -187,7 +187,7 @@ Date:   Sat Oct 25 11:13:57 2025 +0000
 
 Now you are ready to publish the changes to your teammates.
 
-```sh
+```console
 coder@3929e2690e0e:~/myproject$ git push origin HEAD:refs/for/master
 Enumerating objects: 3, done.
 Counting objects: 100% (3/3), done.
