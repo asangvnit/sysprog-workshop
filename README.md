@@ -3,7 +3,6 @@
 Systems Programming Workshop for ACM India
 
 - [Order of Presentations](#order-of-presentations)
-- [Lab Assignments](Assignments.md)
 - [Tracking Document](#tracking-document)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
