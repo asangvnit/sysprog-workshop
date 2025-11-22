@@ -3,7 +3,7 @@
 Systems Programming Workshop for ACM India
 
 - [Order of Presentations](#order-of-presentations)
-- [Lab Assignments](#lab-assignments)
+- [Lab Assignments](Assignments.md)
 - [Tracking Document](#tracking-document)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -21,10 +21,6 @@ The suggested order of reading for self study is given below. Most of the presen
 5. [Working with cmake](cmake-demo/README.md)
 6. [Analyzing Performance](perf-demo/README.md)
 7. [Leak detection and other tools](valgrind-demo/README.md)
-
-## Lab Assignments
-
-- [Complete the assignments](Assignments.md)
 
 ## Tracking Document
 
