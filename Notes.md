@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Rendering markdown files locally](#rendering-markdown-files-locally)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Rendering markdown files locally
 
 [grip][grip] package provides ability to render [GFM][gfm] (GitHub Flavored
