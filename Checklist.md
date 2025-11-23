@@ -56,4 +56,4 @@ able to connect to ACM Wifi directly.
 
 - Laser pointer with new batteries
 - [PPT Remote Presenter](https://www.amazon.in/rts-2019-2020-Presenter-Powerpoint-Controller/dp/B07XZJ93MG/)
-- Small Water Bottles for the speakers
+- Small water bottles for the speakers
