@@ -231,3 +231,8 @@ In order ot understand branch prediction stats, see this:
 - [pstack](https://linux.die.net/man/1/pstack) prints a stacktrace of a running process
 - [lsof](https://www.man7.org/linux/man-pages/man8/lsof.8.html) list open files
 - [netstat](https://linux.die.net/man/8/netstat) Print network connections, routing tables, interface statistics
+- [sanitizers](https://clang.llvm.org/docs/index.html) Clang (LLVM) Compiler and Toolchain project provides support for various snaitizers. Usually much faster than valgrind. Most important ones are:
+  - [AddressSanitizer - asan](https://clang.llvm.org/docs/ThreadSanitizer.html) - a fast memory error detector. Useful for determining Out-of-bounds accesses to heap, stack and globals, Use-after-free, double-free, invalid free. Slow down - 2x
+  - [ThreadSanitizer](https://clang.llvm.org/docs/ThreadSanitizer.html) - a tool that detects data races. Slow down - 5x - 15x
+  - [MemorySanitizer](https://clang.llvm.org/docs/MemorySanitizer.html) - a detector of uninitialized memory use. Slow down - 3x
+  - [UndefinedBehaviorSanitizer - ubsan\)](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html) - a fast undefined behavior detector. Catch various kinds of undefined behavior during program execution, like array out of bound, bitwise shifts that are out of bounds, signed integer overflow
